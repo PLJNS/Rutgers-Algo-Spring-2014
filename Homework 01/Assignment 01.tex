@@ -29,6 +29,93 @@
 
 \pagebreak
 
+\section*{Part A}
 
+\subsection*{Problem 1}
+
+In each of the following situations indicate whether $f = O(g)$ or $f = \Omega(g)$ 
+or $f = \Theta(g)$:
+
+\begin{enumerate}
+
+\item $f(n) = \sqrt{2^{7x}}, g(n) = \lg(7^{2x})$
+
+\[ f(n) = \sqrt{2^{7x}} = \sqrt{128^{x}}\]
+\[ g(n) = \lg(7^{2x}) = \lg(49^{x})\]
+\[ lg(49^1) \approx 5.6 \]
+\[ \sqrt{128^{1}} \approx 11.3 \]
+
+Notice that both of these functions only grow relative to $x$.
+
+\[ f = \Omega(g) \]
+
+\item $f(n) = 2^{nln(n)}, g(n) = n!$
+
+The factorial, that is $n!$, function grows much, much faster than $2^n$.
+
+\[ f = \Omega(g) \]
+
+\item $f(n) = \lg(\lg^*(n)), g(n) = \lg^*(\lg(n)) $
+
+\[ f = \Theta(g) \]
+
+\item $f(n) = \frac{lg(n^2)}{n}, g(n) = lg^*(n)$
+
+\[f(n) = \frac{lg(n^2)}{n} = \frac{2 lg(n)}{n}\]
+
+\[ f = \Theta(g) \]
+
+\item $f(n) = 2^n, g(n) = n^{\lg(n)}$
+
+This is comparing the exponential function to a function that is less than
+$n^2$.
+
+\[ f = \Omega(g) \]
+
+\item $f(n) = 2^{\sqrt{\ln(n)}}, g(n) = n(\lg(n)^3)$
+
+\[ f(n) = 2^{\sqrt{n}}, g(n) = (2^n) (n^3) \]
+
+\[f = \Omega{g}\]
+
+\item $f(n) = e^{\cos(x)}, g(n) = \lg(x)$
+
+\[ f = \Omega(g) \]
+
+\item $ f(n) = \lg(n^2), g(n) = (\lg(n))^2 $
+
+\[ f = \Theta(g) \]
+
+\item $ f(n) = \sqrt{4n^2 - 12n + 9}, g(n) = n^{\frac{3}{2}} $
+
+\[ f = \Theta(g) \]
+
+\item $ f(n) = \sum_{k = 1}^{n} k, g(n) = (n + 2)^2 $
+
+\[ f = \Omega(g) \]
+
+\end{enumerate}
+
+\subsection*{Problem 2}
+
+\section*{Part B}
+
+\subsection*{Problem 3}
+
+\subsection*{Problem 4}
+
+\subsection*{Problem 5}
+
+\section*{Part C}
+
+\subsection*{Problem 6}
+
+\subsection*{Problem 7}
+
+\section*{Part D}
+
+\subsection*{Problem 8}
+
+\subsection*{Problem 9}
 
 \end{document}
