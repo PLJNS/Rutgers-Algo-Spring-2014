@@ -97,6 +97,12 @@ $n^2$.
 \end{enumerate}
 
 \subsection*{Problem 2}
+First line takes 1 to save and 1 to generate.
+The first if block check is 1 (mod by 2, check if 0) along with 1 for assignment and (cost of add here) for addition.
+Line 4 takes: , (mod time) for mod and 1 for assignment
+Line 5, the loop lasts m times and for each sub line: the if check is GCD runtime, the computation is (unknown), y0 is: (cost of mod + exponent)
+the inner loop is m-1 times, and then for both line 11/12 is (modular exponential time). the last if check is the time for primality test.
+
 
 \section*{Part B}
 
