@@ -8,6 +8,8 @@
 \usepackage{tabularx}
 \usepackage{enumerate}
 \usepackage{amsmath, amssymb, graphics, setspace}
+\usepackage[noline,noend,ruled,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
 
 \newcommand{\mathsym}[1]{{}}
 \newcommand{\unicode}[1]{{}}
@@ -21,7 +23,7 @@
 \date{\today}
 
 \usepackage{setspace}
-\doublespacing
+\singlespacing
 
 \begin{document}
 
@@ -38,71 +40,120 @@ or $f = \Theta(g)$:
 
 \begin{enumerate}
 
-\item $f(n) = \sqrt{2^{7x}}, g(n) = \lg(7^{2x})$
-
-\[ f(n) = \sqrt{2^{7x}} = \sqrt{128^{x}}\]
-\[ g(n) = \lg(7^{2x}) = \lg(49^{x})\]
-\[ lg(49^1) \approx 5.6 \]
-\[ \sqrt{128^{1}} \approx 11.3 \]
-
-Notice that both of these functions only grow relative to $x$.
-
-\[ f = \Omega(g) \]
-
-\item $f(n) = 2^{nln(n)}, g(n) = n!$
-
-The factorial, that is $n!$, function grows much, much faster than $2^n$.
-
-\[ f = \Omega(g) \]
-
-\item $f(n) = \lg(\lg^*(n)), g(n) = \lg^*(\lg(n)) $
-
-\[ f = \Theta(g) \]
-
-\item $f(n) = \frac{lg(n^2)}{n}, g(n) = lg^*(n)$
-
-\[f(n) = \frac{lg(n^2)}{n} = \frac{2 lg(n)}{n}\]
-
-\[ f = \Theta(g) \]
-
-\item $f(n) = 2^n, g(n) = n^{\lg(n)}$
-
-This is comparing the exponential function to a function that is less than
-$n^2$.
-
-\[ f = \Omega(g) \]
-
-\item $f(n) = 2^{\sqrt{\ln(n)}}, g(n) = n(\lg(n)^3)$
-
-\[ f(n) = 2^{\sqrt{n}}, g(n) = (2^n) (n^3) \]
-
-\[f = \Omega{g}\]
-
-\item $f(n) = e^{\cos(x)}, g(n) = \lg(x)$
-
-\[ f = \Omega(g) \]
-
-\item $ f(n) = \lg(n^2), g(n) = (\lg(n))^2 $
-
-\[ f = \Theta(g) \]
-
-\item $ f(n) = \sqrt{4n^2 - 12n + 9}, g(n) = n^{\frac{3}{2}} $
-
-\[ f = \Theta(g) \]
-
-\item $ f(n) = \sum_{k = 1}^{n} k, g(n) = (n + 2)^2 $
-
-\[ f = \Omega(g) \]
+	\item $f(n) = \sqrt{2^{7x}}, g(n) = \lg(7^{2x})$
+		
+		\[ f(n) = \sqrt{2^{7x}} = \sqrt{128^{x}}\]
+		\[ g(n) = \lg(7^{2x}) = \lg(49^{x})\]
+		\[ lg(49^1) \approx 5.6 \]
+		\[ \sqrt{128^{1}} \approx 11.3 \]
+		
+		Notice that both of these functions only grow relative to $x$.
+		
+		\[ f = \Omega(g) \]
+	
+	\item $f(n) = 2^{nln(n)}, g(n) = n!$
+	
+		The factorial, that is $n!$, function grows much, much faster than $2^n$.
+		
+		\[ f = \Omega(g) \]
+	
+	\item $f(n) = \lg(\lg^*(n)), g(n) = \lg^*(\lg(n)) $
+	
+		\[ f = \Theta(g) \]
+	
+	\item $f(n) = \frac{lg(n^2)}{n}, g(n) = lg^*(n)$
+	
+		\[f(n) = \frac{lg(n^2)}{n} = \frac{2 lg(n)}{n}\]
+		
+		\[ f = \Theta(g) \]
+		
+	\item $f(n) = 2^n, g(n) = n^{\lg(n)}$
+	
+		This is comparing the exponential function to a function that is less than
+		$n^2$.
+		
+		\[ f = \Omega(g) \]
+		
+	\item $f(n) = 2^{\sqrt{\ln(n)}}, g(n) = n(\lg(n)^3)$
+	
+		\[ f(n) = 2^{\sqrt{n}}, g(n) = (2^n) (n^3) \]
+		
+		\[f = \Omega{g}\]
+	
+	\item $f(n) = e^{\cos(x)}, g(n) = \lg(x)$
+	
+		\[ f = \Omega(g) \]
+	
+	\item $ f(n) = \lg(n^2), g(n) = (\lg(n))^2 $
+	
+		\[ f = \Theta(g) \]
+	
+	\item $ f(n) = \sqrt{4n^2 - 12n + 9}, g(n) = n^{\frac{3}{2}} $
+	
+		\[ f = \Theta(g) \]
+	
+	\item $ f(n) = \sum_{k = 1}^{n} k, g(n) = (n + 2)^2 $
+	
+		\[ f = \Omega(g) \]
 
 \end{enumerate}
 
 \subsection*{Problem 2}
-First line takes 1 to save and 1 to generate.
-The first if block check is 1 (mod by 2, check if 0) along with 1 for assignment and (cost of add here) for addition.
-Line 4 takes: , (mod time) for mod and 1 for assignment
-Line 5, the loop lasts m times and for each sub line: the if check is GCD runtime, the computation is (unknown), y0 is: (cost of mod + exponent)
-the inner loop is m-1 times, and then for both line 11/12 is (modular exponential time). the last if check is the time for primality test.
 
+\begin{algorithm}[h]
+\caption{${\tt Number\_Theoretic\_Algorithm}$ $($ integer $n$ ) }
+\label{algo}
+$N \leftarrow Random\_Sample( 0, 2^n-1)$\; 
+\If{ $N$ is even }
+{
+  $N \leftarrow N + 1$ \CommentSty{/* Worse case, N is odd, 2 ** N - 1. */} \; 
+}
+$m \leftarrow N \mod\ n$ \CommentSty{/* worse case same as n */} \; 
+\For{ $j \leftarrow 0$ to $m$ }
+{
+  \If{ ${\tt Greatest\_Common\_Divisor}$( $j, N ) \neq 1$ }
+  {
+    return {\tt FALSE}; \CommentSty{/* GCD is O(n) */}
+  }
+  Compute $x,z$ so that $N - 1 = 2^z \cdot x$ and $x$ is odd\;
+  $y_0 \leftarrow (N-1-j)^x \mod N$\;
+  \For{ $i \leftarrow 1$ to $m$}
+  {
+    $y_i \leftarrow y_{i-1}^2 \mod N$ \;
+    $y_i \leftarrow y_i + y_{i-1} \mod N$\;
+  }
+  \If{ {\tt Low\_Error\_Primality\_Test}($y_m$) == {\tt FALSE} }
+  {
+    return {\tt FALSE} \CommentSty{/* Naive primality test is O(sqrt(n)) */} \;
+  }
+}
+return {\tt TRUE}\;
+\end{algorithm}
+
+Compute the asymptotic running time of the
+above algorithm as a function of its input parameter, given:
+
+\begin{itemize}
+\item The running times of integer arithmetic operations (e.g.,
+  multiplication of two large $n$-bit numbers is $O(n^2)$).
+\item Assume that sampling a number $N$ is an operation linear to the
+  number of bits needed to represent this number.
+\end{itemize}
+
+\noindent Do not just present the final result. For each line of
+pseudo-code indicate the best running time for the corresponding
+operation given current knowledge from lectures and recitations and
+then show how the overall running time emerges.\\
+
+%First line takes 1 to save and 1 to generate.
+%The first if block check is 1 (mod by 2, check if 0) along with 1 for assignment %and (cost of add here) for addition.
+%Line 4 takes: , (mod time) for mod and 1 for assignment
+%Line 5, the loop lasts m times and for each sub line: the if check is GCD runtime, %the computation is (unknown), y0 is: (cost of mod + exponent)
+%the inner loop is m-1 times, and then for both line 11/12 is (modular exponential %time). the last if check is the time for primality test.
+
+Worse case running $n$ operations with times $O(n)$, $O(n)$, and $O(\sqrt{n})$.
+
+That's a run time of $O(2 n^2 + n^{\frac{3}{2}})$, resulting in big-O of $O(n^2)$.
 
 \section*{Part B}
 
