@@ -158,11 +158,23 @@ That's a run time of $O(2 n^2 + n^{\frac{3}{2}})$, resulting in big-O of $O(n^2)
 \section*{Part B}
 
 \subsection*{Problem 3}
-A tree with $m$ children is $\log_m^(N+1)-1$.
+\begin{itemize}
+\item A tree with $m$ children is $\log_m^(N+1)-1$.
 
-Two perfect trees = something i don't get
+\item A perfect tree will only be changing based on the $m,m^\prime$ values. Whichever value is larger will run faster.
+
+\item
+\end{itemize}
+
 
 \subsection*{Problem 4}
+\begin{itemize}
+\item I found out how to do this using a website, since I didn't understand how to from lecture ? $2^{902} \bmod 7$ We can find the original, $2 \bmod 7 = 2$ because $7$ doesn't go into $2$ at all. We can next square, finding $4 \bmod 7 = 4$. Divide exponent in half, $2^{451} \bmod 7$. Next we can do $4 \bmod 7 = 4$ again, and square. $16 \bmod 7 = 2$. Once again we cut our exponent, $2^{225} \bmod 7$. Now we have $4 \cdot 2 \bmod 7 \to 8 \bmod 7 = 1$. Next we square our other value, $4 \bmod 7 = 4$. We divide exponent again, $2^{112} \bmod 7$, and we do $16 \bmod 7 = 2$. Another cut, $2^{56} \bmod 7$. We can check $2^2 \bmod 7 = 4$. Another time we cut, $2^{28} \bmod 7$. We need to use previous value again, $16 \bmod 7 = 2$. $2^{14} \bmod 7$ from another cut, and we use $4 \bmod 7 = 4$. We can cut again, $2^7 \bmod 7$ and we use $4 \bmod 7 = 4$. We are almost done and use $2^3 \bmod 7$. We must check $8 \bmod 7 = 1$, and now we are on the final step. $2^1 \bmod 7 = 4$
+
+\item
+
+\item
+\end{itemize}
 
 \subsection*{Problem 5}
 
