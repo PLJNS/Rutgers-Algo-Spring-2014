@@ -188,6 +188,14 @@ Last one: $11 \bmod 1111 \to 1111 = 101(11) + 0$. This one can't be solved eithe
 
 \subsection*{Problem 6}
 
+\begin{itemize}
+
+\item The hash function for the family is definitely consistent because each item is only either $0,1$, and we are modding by the total amount of choices, but I'm not sure how to prove this other than by what was stated in class: $Pr = { h_\alpha(x) = h_\alpha(y)} = Pr { \sum_{i=1}^4 \alpha_i \cdot x_i = \sum_{i = 1}^4 \alpha_i \cdot y_i \bmod N} = Pr {\underbrace{\sum_{i=1}^3 \alpha_i (x_i - y_i) = \alpha_4 (y_4 - x_4 \bmod N)}_\text{given x, y and randomly picked a1,a2,a3: c is constant}}$. However, in this case this would be different because we have $0,1$ not $1,...,4$: $Pr = { h_\alpha(x) = h_\alpha(y)} = Pr { \sum_{i=1}^2 \alpha_i \cdot x_i = \sum_{i = 1}^2 \alpha_i \cdot y_i \bmod N} = Pr {\underbrace{\sum_{i=1}^1 \alpha_i (x_i - y_i) = \alpha_2 (y_2 - x_2 \bmod N)}_\text{given x, y and randomly picked a1: c is constant}}$.
+
+\item 
+
+\end{itemize}
+
 \subsection*{Problem 7}
 
 \section*{Part D}
