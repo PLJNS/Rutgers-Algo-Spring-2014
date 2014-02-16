@@ -149,7 +149,7 @@ then show how the overall running time emerges.\\
 %The first if block check is 1 (mod by 2, check if 0) along with 1 for assignment %and (cost of add here) for addition.
 %Line 4 takes: , (mod time) for mod and 1 for assignment
 %Line 5, the loop lasts m times and for each sub line: the if check is GCD runtime, %the computation is (unknown), y0 is: (cost of mod + exponent)
-%the inner loop is m-1 times, and then for both line 11/12 is (modular exponential %time). the last if check is the time for primality test.
+%the inner loop is m-1 times, and then for both line 11/12 is (modular exponential %time). the last if check is hfthe time for primality test.
 
 Worse case running $n$ operations with times $O(n)$, $O(n)$, and $O(\sqrt{n})$.
 
@@ -171,9 +171,15 @@ That's a run time of $O(2 n^2 + n^{\frac{3}{2}})$, resulting in big-O of $O(n^2)
 \begin{itemize}
 \item I found out how to do this using a website, since I didn't understand how to from lecture ? $2^{902} \bmod 7$ We can find the original, $2 \bmod 7 = 2$ because $7$ doesn't go into $2$ at all. We can next square, finding $4 \bmod 7 = 4$. Divide exponent in half, $2^{451} \bmod 7$. Next we can do $4 \bmod 7 = 4$ again, and square. $16 \bmod 7 = 2$. Once again we cut our exponent, $2^{225} \bmod 7$. Now we have $4 \cdot 2 \bmod 7 \to 8 \bmod 7 = 1$. Next we square our other value, $4 \bmod 7 = 4$. We divide exponent again, $2^{112} \bmod 7$, and we do $16 \bmod 7 = 2$. Another cut, $2^{56} \bmod 7$. We can check $2^2 \bmod 7 = 4$. Another time we cut, $2^{28} \bmod 7$. We need to use previous value again, $16 \bmod 7 = 2$. $2^{14} \bmod 7$ from another cut, and we use $4 \bmod 7 = 4$. We can cut again, $2^7 \bmod 7$ and we use $4 \bmod 7 = 4$. We are almost done and use $2^3 \bmod 7$. We must check $8 \bmod 7 = 1$, and now we are on the final step. $2^1 \bmod 7 = 4$
 
-\item
+\item $11 \bmod 120 = 121, 13 \bmod 45 = 91, 9 \bmod 11 = 45$. For the last one and third one I used Extended Euclidean Algorithm discussed in class. I also used $p_i = p_{i-2} - p_{i-1} q_{i-2} \bmod n$.
 
-\item
+
+Third one: $35 \bmod 77 \to 77 = 2(35) + 7$ and $p_0 = 0$. Next, $35 = 5(7) + 0$ and $p_1 = 1$. However, this can't be solved.
+
+Last one: $11 \bmod 1111 \to 1111 = 101(11) + 0$. This one can't be solved either because we were unable to get past the step, like the third one.
+
+\item $\forall y \in [1,x-1]: \gcd(x,y) = 1$. If we want to find all of the modulo $x^m$ between $0,1,...,x^m -1$ then we can assume there are $m$ total modulo inverses to compute. An example is that there $x = 2, m = 2$ to keep it simple. This means that every number from $1 \to 1: \gcd(1,1) = 1$ which is correct. Now we need to find $0,...,2^2-1$ which becomes $0,...,3$. We have a total of $4$ numbers to modulo inverse. The running time to find is the amount multiplied by the time it takes to run the euclidean algorithm. There's a total of $x^m$ to find and the Extended Euclidean algorithm takes $\log(m^2)$. Our total runtime is $x^m \log(m^2)$.
+
 \end{itemize}
 
 \subsection*{Problem 5}
