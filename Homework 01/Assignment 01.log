@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  17 FEB 2014 18:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  17 FEB 2014 19:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -285,19 +285,19 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (./Assignment 01.aux)
 \openout1 = `"Assignment 01.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Info: Redefining \microtypecontext on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Info: Redefining \microtypecontext on input line 30.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2),
 (microtype)             factor: 1100.
@@ -383,7 +383,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -391,7 +391,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2013/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -405,50 +405,51 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 137.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 139.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 137.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 139.
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--147
+Underfull \hbox (badness 10000) in paragraph at lines 145--149
 
  []
 
-[3] [4] [5] [6] [7] (./Assignment 01.aux) ) 
+[3] [4] [5] [6] [7] [8] (./Assignment 01.aux) ) 
 Here is how much of TeX's memory you used:
- 6526 strings out of 493315
- 97707 string characters out of 6137904
- 222215 words of memory out of 5000000
- 9855 multiletter control sequences out of 15000+600000
+ 6528 strings out of 493315
+ 97714 string characters out of 6137904
+ 221229 words of memory out of 5000000
+ 9857 multiletter control sequences out of 15000+600000
  14093 words of font info for 60 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,14n,36p,999b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmtt10.pfb>
-Output written on "Assignment 01.pdf" (7 pages, 212922 bytes).
+</usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2013/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb>
+Output written on "Assignment 01.pdf" (8 pages, 218286 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 103 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13313 words of extra memory for PDF output out of 14400 (max. 10000000)
 

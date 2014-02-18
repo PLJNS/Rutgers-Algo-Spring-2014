@@ -11,6 +11,8 @@
 \usepackage[noline,noend,ruled,linesnumbered]{algorithm2e}
 \usepackage{algpseudocode}
 
+\DeclareMathOperator{\lcm}{lcm}
+
 \newcommand{\mathsym}[1]{{}}
 \newcommand{\unicode}[1]{{}}
 
@@ -228,6 +230,57 @@ $\forall y \in [1,x-1]: \gcd(x,y) = 1$. If we want to find all of the modulo $x^
 \item \textbf{Assume two positive integers $x < y$. Then the pairs
   $(5x+3y,3x+2y)$ and $(x,y)$ have the same greater common
   divisor. True or False, explain.}
+
+\begin{itemize}
+
+\item The way we can solve this is using the following lemma, where for
+all integers and numbers greater than zero:
+
+$$ \gcd(x, y) = \frac{xy}{\lcm(x, y)} $$
+
+\item Notice that the left half of the equation will serve as an answer
+to the the second pair in the given problem. 
+
+\item Witness that the lowest common multiple of $x$ and $y$ is $xy$.
+
+\item For the first pair, witness that by the same rule:
+
+$$ \gcd((5x+3y), (3x+2y)) = \frac{(5x+3y)(3x+2y)}{\lcm((5x+3y), (3x+2y))} $$
+
+\item Witness that the lowest common multiple of $(5x+3y)$ and $(3x+2y)$ is $(5x+3y)(3x+2y)$.
+
+\item Multiply
+
+$$(5x+3y)(3x+2y) = 15x^2 + 19xy + 6y^2$$
+
+\item Notice that the claim being tested by the problem can be symbolized
+by the following:
+
+$$ \forall x \forall y (x < y \land x,y \ne 0 \land x,y \in \mathbb{Z} \land  \gcd((5x+3y), (3x+2y)) = \gcd(x, y)) $$
+
+\item Just consider the last condition:
+
+$$ \gcd((5x+3y), (3x+2y)) = \gcd(x, y) $$
+
+\item Substitute the equalities we found earlier:
+
+$$ \frac{(5x+3y)(3x+2y)}{\lcm((5x+3y), (3x+2y))} = \frac{xy}{\lcm(x, y)} $$
+
+\item Substitute the lowest common multiples we found earlier:
+
+$$ \frac{(5x+3y)(3x+2y)}{15x^2 + 19xy + 6y^2} = \frac{xy}{xy} $$
+
+\item Multiply
+
+$$ \frac{15x^2 + 19xy + 6y^2}{15x^2 + 19xy + 6y^2} = \frac{xy}{xy} $$
+
+\item Simplify
+
+$$ 1 = 1 $$
+
+\item It's true.
+
+\end{itemize}
 
 \item \textbf{Consider the following sequence of numbers: $s_n = 1 +
   \Pi_{i=0}^{n-1} s_i$, where $s_0 = 2$. Prove that any two numbers in
