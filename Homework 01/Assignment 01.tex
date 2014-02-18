@@ -132,20 +132,14 @@ $m \leftarrow N \mod\ n$ \CommentSty{/* worse case same as n */} \;
 return {\tt TRUE}\;
 \end{algorithm}
 
-Compute the asymptotic running time of the
-above algorithm as a function of its input parameter, given:
+\textbf{Compute the asymptotic running time of the above algorithm as a function of its input parameter, given:}
 
 \begin{itemize}
-\item The running times of integer arithmetic operations (e.g.,
-  multiplication of two large $n$-bit numbers is $O(n^2)$).
-\item Assume that sampling a number $N$ is an operation linear to the
-  number of bits needed to represent this number.
+\item \textbf{The running times of integer arithmetic operations (e.g.,
+  multiplication of two large $n$-bit numbers is $O(n^2)$).}
+\item \textbf{Assume that sampling a number $N$ is an operation linear to the
+  number of bits needed to represent this number.}
 \end{itemize}
-
-\noindent Do not just present the final result. For each line of
-pseudo-code indicate the best running time for the corresponding
-operation given current knowledge from lectures and recitations and
-then show how the overall running time emerges.\\
 
 %First line takes 1 to save and 1 to generate.
 %The first if block check is 1 (mod by 2, check if 0) along with 1 for assignment %and (cost of add here) for addition.
@@ -153,9 +147,11 @@ then show how the overall running time emerges.\\
 %Line 5, the loop lasts m times and for each sub line: the if check is GCD runtime, %the computation is (unknown), y0 is: (cost of mod + exponent)
 %the inner loop is m-1 times, and then for both line 11/12 is (modular exponential %time). the last if check is hfthe time for primality test.
 
-Worse case running $n$ operations with times $O(n)$, $O(n)$, and $O(\sqrt{n})$.
+\begin{itemize}
+\item Worse case running $n$ operations with times $O(n)$, $O(n)$, and $O(\sqrt{n})$ (refer to marked-up algorithm above, in comments).
 
-That's a run time of $O(2 n^2 + n^{\frac{3}{2}})$, resulting in big-O of $O(n^2)$.
+\item That's a run time of $O(2 n^2 + n^{\frac{3}{2}})$, resulting in big-O of $O(n^2)$.
+\end{itemize}
 
 \section*{Part B}
 
@@ -285,6 +281,13 @@ $$ 1 = 1 $$
 \item \textbf{Consider the following sequence of numbers: $s_n = 1 +
   \Pi_{i=0}^{n-1} s_i$, where $s_0 = 2$. Prove that any two numbers in
   this sequence are relatively prime.}
+  
+  \begin{itemize}
+  
+  \item I don't know.
+  
+  \end{itemize}
+  
 \end{itemize}
 
 \section*{Part C}
@@ -373,8 +376,7 @@ $$ (n - 1)! \equiv -1 \bmod n $$
 $$ (4 - 1)! = 6 $$
 $$ -1 \bmod 4 = -1 $$
 $$ 6 \ne -1 $$
-$$ (n-1)! \ne -1 \bmod
-  n $$
+$$ (n-1)! \ne -1 \bmod n \: \forall \:  n $$
 
 \end{itemize}
 
@@ -389,6 +391,9 @@ $$ (n-1)! \ne -1 \bmod
 
 \item Why? It'll take \emph{factorial time}, which is among the worst.
 
+\item Especially when Fermat's Little Theorem gets us a much better time 
+complexity, and even manual checking is more efficient than factorial time.
+
 \end{itemize}  
 
 \end{itemize}
@@ -402,6 +407,12 @@ $$ (n-1)! \ne -1 \bmod
 \textbf{Make a table with three columns. The first column is all numbers
 from 0 to 36. The second is the residues of these numbers modulo 5;
 the third column is the residues modulo 7.}
+
+  \begin{itemize}
+  
+  \item See following table.
+  
+  \end{itemize}
 
 \begin{table}[htdp]
 \caption{Problem 8, Part A}
@@ -462,6 +473,12 @@ $0 \leq q < xy$, so that:}
 
 $$q \equiv m \bmod{x}$$
 $$q \equiv n \bmod{y}$$
+
+  \begin{itemize}
+  
+  \item I don't know.
+  
+  \end{itemize}
   
 \subsubsection*{Part C}
 
@@ -471,7 +488,11 @@ possible to go the other way. In particular, show the following:}
 $$q = ( m \cdot y \cdot (y^{-1} \bmod{x}) + n \cdot x \cdot
 (x^{-1} \bmod{y}) ) \bmod{xy}$$
 
-
+  \begin{itemize}
+  
+  \item I don't know.
+  
+  \end{itemize}
 
 \subsubsection*{Part D} 
 
@@ -485,7 +506,48 @@ case?}
 
 \item \textbf{How did Mallory do this? }
 
+\begin{itemize}
+
+\item Represent encrypted messages with $C$, original messages with $M$,
+and the multiple of two primes $p$ and $q$ with $N$. The exponent of $M$
+by $e$.
+
+\item Mallory intercepted the $C_1$, $C_2$, and $C_3$ which belong to Bob,
+Charlie, and David respectively. She knows these equal the following:
+
+$$ C_i \equiv M^e \bmod N_i $$
+
+\item Observe the following from the table,
+
+$$ C_1 = 153, C_2 = 196, C_3 = 27 $$
+
+\item Also from the table, observe the following,
+
+$$ e = 3 $$
+
+\item When Mallory looked up their public keys, she gained the following information:
+
+$$ N_1 = 155, N_2 = 203, N_3 = 117 $$
+
+\item She was thus able to construct the following series of equations,
+
+$$ 153 = M^3 \bmod 155 $$
+$$ 196 = M^3 \bmod 203 $$
+$$ 27 = M^3 \bmod 117 $$
+
+\item Now Mallory uses the Chinese Remainder Theorem to compute:
+
+$$ C = M^3 \bmod 155 \times 203 \times 117 $$
+
+\item This message will be smaller than $155 \times 203 \times 117$ because $e = 3$.
+
+\item Now the attacker can get the original message by taking the cube root.
+
+\end{itemize}
+
 \item \textbf{What is the original message?}
+
+$$ 42 $$
 
 \end{itemize}
 
