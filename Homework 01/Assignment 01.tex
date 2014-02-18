@@ -256,9 +256,9 @@ $$(5x+3y)(3x+2y) = 15x^2 + 19xy + 6y^2$$
 \item Notice that the claim being tested by the problem can be symbolized
 by the following:
 
-$$ \forall x \forall y (x < y \land x,y \ne 0 \land x,y \in \mathbb{Z} \land  \gcd((5x+3y), (3x+2y)) = \gcd(x, y)) $$
+$$ \forall x \forall y ((x < y \land x,y \ne 0 \land x,y \in \mathbb{Z}) \to  \gcd((5x+3y), (3x+2y)) = \gcd(x, y)) $$
 
-\item Just consider the last condition:
+\item Just consider the consequent:
 
 $$ \gcd((5x+3y), (3x+2y)) = \gcd(x, y) $$
 
