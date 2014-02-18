@@ -311,11 +311,30 @@ The hash function for the family is definitely consistent because each item is o
 \item \textbf{Assume that number $n$ is prime, then all numbers $1 \leq x < n$
   are invertible modulo $n$. Which of these numbers are their own
   inverse modulo $n$?}
+  
+  \begin{itemize}
+  
+  	\item  $x$ is its own inverse $\bmod n$ if $x^2 = 1 \bmod n$ which means:
+	
+	$$x^2 -  1 =  0 \bmod n$$
+	
+	\item Were interested in the numbers less than $n$ but greater than or 
+	equal to 1, so observe that for all $n$:
+	
+	$$1^2 - 1 = 0 \bmod n$$
+	$$0 = 0 \bmod n$$
+	
+	\item Therefore $1$ is a value of $x$ that will be its own inverse modulo
+	$n$.
+	  
+  \end{itemize}
 
-\item \textbf{Show that $(n-1)! \equiv -1 \mod n$) for prime $n$. [Hint:
+\item \textbf{Show that $(n-1)! \equiv -1 \bmod n$ for prime $n$. [Hint:
   Compute the value of $(n-1) \mod n$ by considering how it arises by
   pairing two numbers smaller than $n$ that are multiplicative
   inverses modulo $n$.]}
+  
+  % compute the value of (n-1) mod n by considering how it arises by pairing two numbers smaller than n that are multiplicative inverses modulo n.
 
 \item \textbf{Show that if $n$ is not prime, then $(n-1)! \neq -1 \mod
   n$. [Hint: What does it mean that $n$ is not prime in terms of the
