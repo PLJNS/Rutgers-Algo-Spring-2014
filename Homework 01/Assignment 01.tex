@@ -363,15 +363,33 @@ $$ (n - 1)! \equiv -1 \bmod n $$
   
   % compute the value of (n-1) mod n by considering how it arises by pairing two numbers smaller than n that are multiplicative inverses modulo n.
 
-\item \textbf{Show that if $n$ is not prime, then $(n-1)! \neq -1 \mod
-  n$. [Hint: What does it mean that $n$ is not prime in terms of the
-    numbers $1 \leq x < n$?]}
+\item \textbf{Show that if $n$ is not prime, then $(n-1)! \neq -1 \bmod
+  n$.}
+
+\begin{itemize}
+
+\item Proof by counterexample for $n = 2$ because $2$ is not prime.
+
+$$ (2 - 1)! = 1 $$
+$$ -1 \bmod 2 = -1 $$
+$$ 1 \ne -1 $$
+$$ (n-1)! \ne -1 \bmod
+  n $$
+
+\end{itemize}
 
 \item \textbf{The above process can be used as a primality test instead of
   Fermat's Little theorem as it is an if-and-only-if condition for
   primality. Why can't we immediately base a primality test on this
-  rule? [Tip: Even if you are not able to answer the previous two
-    questions, you should be able to argue about this question.]}
+  rule?}
+  
+\begin{itemize}
+
+\item It's obviously possible \emph{in principle} but why both \emph{in practice}? Computing $(n - 1)! \mod n$ for large $n$ is computationally very expensive.
+
+\item Why? It'll take \emph{factorial time}, which is among the worst.
+
+\end{itemize}  
 
 \end{itemize}
 
