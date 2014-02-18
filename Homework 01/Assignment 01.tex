@@ -329,10 +329,37 @@ The hash function for the family is definitely consistent because each item is o
 	  
   \end{itemize}
 
-\item \textbf{Show that $(n-1)! \equiv -1 \bmod n$ for prime $n$. [Hint:
-  Compute the value of $(n-1) \mod n$ by considering how it arises by
-  pairing two numbers smaller than $n$ that are multiplicative
-  inverses modulo $n$.]}
+\item \textbf{Show that $(n-1)! \equiv -1 \bmod n$ for prime $n$.}
+
+\begin{itemize}
+
+\item Expand left-hand side:
+
+$$ (n-1)! = (n - 1) \times (n - 2) \times \cdots \times 3 \times 2 \times 1$$ 
+
+\item What we want to do is pair each number with its inverse.
+
+\item But some number are there own inverses! Which ones are these?
+
+$$ x^2 \equiv 1 (\bmod n) $$
+$$ x^2 - 1 \equiv 0 (\bmod n) $$
+$$ (x - 1)(x + 1) \equiv 0 (\bmod n) $$
+
+\item Now solve just with algebra
+
+$$ x - 1 \equiv 0 (\bmod n) \to x \equiv 1 (\bmod n) $$
+$$ x + 1 \equiv 0 (\bmod n) \to x \equiv -1 (\bmod n) $$
+
+\item So $1$ and $n - 1$ are there own inverses.
+
+\item Now group all others with their inverses,
+
+$$ (n - 1)! \equiv (2 \times 2^{-1})(3 \times 3^{-1}) \cdots (n)(n - 1) $$
+$$ (n - 1)! \equiv (1)(1) \cdots (n)(n - 1) $$
+$$ (n - 1)! \equiv (n)(n - 1) $$
+$$ (n - 1)! \equiv -1 \bmod n $$
+
+\end{itemize}
   
   % compute the value of (n-1) mod n by considering how it arises by pairing two numbers smaller than n that are multiplicative inverses modulo n.
 
@@ -415,8 +442,8 @@ following is true: for every pair of numbers $m$ and $n$ so that: $0
 \leq m < x$ and $0 \leq n < y$, there is a unique integer $q$, where
 $0 \leq q < xy$, so that:}
 
-$$q \equiv m \pmod{x}$$
-$$q \equiv n \pmod{y}$$
+$$q \equiv m \bmod{x}$$
+$$q \equiv n \bmod{y}$$
   
 \subsubsection*{Part C}
 
