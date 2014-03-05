@@ -66,7 +66,7 @@ and justify your answers.\\
 	
 	\begin{itemize}
 	
-		\item $a = 2$, $b = 4$
+		\item $a = 2$, $b = 4$, where $a \geq 1$ and $b > 1$
 		\item $f(n) = \Omega(n^c)$ where $c = 0.51$
 		\item $\log_b a = \log_4 2 = \frac{1}{2}$
 		\item $c > \log_b a$, that is $0.51 > \frac{1}{2}$
@@ -79,8 +79,9 @@ and justify your answers.\\
 	
 	\begin{itemize}
 	
-		\item $a = 16$, $b = 4$
+		\item $a = 16$, $b = 4$, where $a \geq 1$ and $b > 1$
 		\item $f(n) = n!$
+		\item $\log_b a = \log_4 16 = 2$
 	
 	\end{itemize}
 	
@@ -88,8 +89,9 @@ and justify your answers.\\
 	
 	\begin{itemize}
 	
-		\item $a = \sqrt{2}$, $b = 2$
+		\item $a = \sqrt{2}$, $b = 2$, where $a \geq 1$ and $b > 1$
 		\item $f(n) = \log n$
+		\item $\log_b a = \log_2 \sqrt{2} = \frac{1}{2}$
 	
 	\end{itemize}
 	
@@ -97,8 +99,8 @@ and justify your answers.\\
 	
 	\begin{itemize}
 	
-		\item $a = 1$, $b = 1$
-		\item $f(n) = \log n$
+		\item $a = 1$, $b = 1$ , where $a \geq 1$ and $b \not> 1$
+		\item Because $b \not> 1$, this problem is not solvable with Master theorem.
 	
 	\end{itemize}
 	
@@ -106,8 +108,9 @@ and justify your answers.\\
 	
 	\begin{itemize}
 	
-		\item $a = 5$, $b = 5$
+		\item $a = 5$, $b = 5$, where $a \geq 1$ and $b > 1$
 		\item $f(n) = \log n$
+		\item $\log_b a = \log_5 5 = 1$
 	
 	\end{itemize}
 	
@@ -150,11 +153,13 @@ manager and the programmer.  The result can be:
 Assume that the projects and programmers match one to one. Your goal
 is to match each programmer to a project.
 
-{\bf A.} Show that any algorithm for this problem must need $\Omega( n
+\begin{enumerate}[label=\Alph*.]
+\item Show that any algorithm for this problem must need $\Omega( n
 \log{n} )$ meetings in the worst case.
 
-{\bf B.}  Design a randomized algorithm for this problem that runs in
+\item  Design a randomized algorithm for this problem that runs in
 expected time $O ( n \log{n} )$.
+\end{enumerate}
 
 \subsection*{Part C (40 points)}
 
