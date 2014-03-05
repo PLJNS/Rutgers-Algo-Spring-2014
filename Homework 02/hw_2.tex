@@ -10,6 +10,7 @@
 \usepackage{amsmath, amssymb, graphics, setspace}
 \usepackage[noline,noend,ruled,linesnumbered]{algorithm2e}
 \usepackage{algpseudocode}
+\usepackage{enumitem}
 
 \DeclareMathOperator{\lcm}{lcm}
 
@@ -42,7 +43,7 @@
 
 The more general version of the Master
 Theorem is the following. Given a recurrence of the form: 
-$$T(n) = a T(\frac{n}{b}) + f(n)$$
+$$T(n) = a T\left(\frac{n}{b}\right) + f(n)$$
 where $a \geq 1$ and $b > 1$ are constants and $f(n)$ is an
 asymptotically positive function, there are 3 cases: 
 \begin{enumerate}
@@ -60,11 +61,57 @@ asymptotically positive function, there are 3 cases:
 $T(n)$ is constant for $n = 1$. Make your bounds as tight as possible,
 and justify your answers.\\
 
-$$T(n) = 2T(\frac{n}{4}) + n^{0.51}$$
-$$T(n) = 16 T(\frac{n}{4}) + n!$$
-$$T(n) = \sqrt{2} T(\frac{n}{2}) + logn$$
-$$T(n) = T(n-1) + lgn$$
-$$T(n) = 5T(n/5) + \frac{n}{lgn}$$
+\begin{enumerate}[label=\Alph*.]
+	\item $T(n) = 2T(\frac{n}{4}) + n^{0.51}$
+	
+	\begin{itemize}
+	
+		\item $a = 2$, $b = 4$
+		\item $f(n) = \Omega(n^c)$ where $c = 0.51$
+		\item $\log_b a = \log_4 2 = \frac{1}{2}$
+		\item $c > \log_b a$, that is $0.51 > \frac{1}{2}$
+		\item $\frac{n^{0.51}}{2} \leq c n^{0.51}$ for any constant $c < 1$ and $c > 0.5$
+		\item $T (n) = \Theta(f(n)) = \Theta (n^{0.51})$
+	
+	\end{itemize}
+	
+	\item $T(n) = 16 T(\frac{n}{4}) + n!$
+	
+	\begin{itemize}
+	
+		\item $a = 16$, $b = 4$
+		\item $f(n) = n!$
+	
+	\end{itemize}
+	
+	\item $T(n) = \sqrt{2} T(\frac{n}{2}) + \log n$
+	
+	\begin{itemize}
+	
+		\item $a = \sqrt{2}$, $b = 2$
+		\item $f(n) = \log n$
+	
+	\end{itemize}
+	
+	\item $T(n) = T(n-1) + \log n$
+	
+	\begin{itemize}
+	
+		\item $a = 1$, $b = 1$
+		\item $f(n) = \log n$
+	
+	\end{itemize}
+	
+	\item $T(n) = 5T(\frac{n}{5}) + \frac{n}{\lg n}$
+	
+	\begin{itemize}
+	
+		\item $a = 5$, $b = 5$
+		\item $f(n) = \log n$
+	
+	\end{itemize}
+	
+\end{enumerate}
 
 \subsection*{Part B (25 points)}
 
