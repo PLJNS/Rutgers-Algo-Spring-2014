@@ -80,7 +80,14 @@ and justify your answers.\\
 	\begin{itemize}
 	
 		\item $a = 16$, $b = 4$, where $a \geq 1$ and $b > 1$
-		\item $f(n) = n!$
+		\item $f(n) = n!$, consider Stirling's approximation
+		
+		\begin{itemize}
+		
+			\item $n\ln(n) - n +O(\ln(n)) = \ln(n!)$
+		
+		\end{itemize}
+		
 		\item $\log_b a = \log_4 16 = 2$
 	
 	\end{itemize}
@@ -89,9 +96,17 @@ and justify your answers.\\
 	
 	\begin{itemize}
 	
+		\item Say that $\log_{10} n = m$, so $10^m = n$
+		\item Notice that our equation is now:
+		
+			$$T(10^m) = \sqrt{2} T\left(\frac{10^m}{2}\right) + m^1$$
+		
 		\item $a = \sqrt{2}$, $b = 2$, where $a \geq 1$ and $b > 1$
-		\item $f(n) = \log n$
+		\item $f(n) = m^1$
 		\item $\log_b a = \log_2 \sqrt{2} = \frac{1}{2}$
+		\item Is $m = O(10^{\frac{m}{2} - \epsilon m}$) for some constant $\epsilon > 0$?
+		\item Is $m = \Theta(\sqrt{m} \log^k m)$ with $k \geq 0$
+		\item Is $m = \Omega(m^{5+\epsilon})$ with $\epsilon > 0$? No.
 	
 	\end{itemize}
 	
