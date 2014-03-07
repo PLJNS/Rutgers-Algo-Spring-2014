@@ -176,6 +176,16 @@ is to match each programmer to a project.
 expected time $O ( n \log{n} )$.
 \end{enumerate}
 
+Show that any algorithm for this problem must need $\Omega( n
+\log{n} )$ meetings in the worst case.
+
+There are a total of $n$ projects and $n$ programmers. Since each programmer can only work on one job (regardless of outcome), and there are a total of $3$ outcomes. This gives us part of Master's Theorem: $T(n) = a$ where $a = 3$. We need to find the size of each project, which we can guess to be $b = 3$ because we know the answer already ($n \log n$). In fact, this answer makes sense because based on the responses of the programmer's we can find what ones they can do and what ones they can't. We can assume the cost done outside of the calls is instant (meaning talking to the manager's, we aren't concerned with this). Per Master's Theorem: $T(n) = 3(\frac{n}{3}) + 1 \to \log_3^3 = 1$ which is true, so our answer is $n^1 \log n$.
+
+Design a randomized algorithm for this problem that runs in
+expected time $O ( n \log{n} )$.
+
+Our randomized algorithm can just be merge sort, we group the programmers in set's, where one set can't do the problem, one set can but wants more pay, and the last set can. Based on their responses, we have our groups to "merge". This algorithm is random because worst, average, and best are $O(n \log n)$.
+
 \subsection*{Part C (40 points)}
 
 \subsubsection*{Problem 3} 
