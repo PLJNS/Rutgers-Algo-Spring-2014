@@ -228,9 +228,24 @@ Can you do this in $O(\log k(\sum_{i=1}^{k}\log m_{i}))$ time?
   least $\dfrac{n}{2}$ elements larger than them should not be
   considered. The problem is how to identify these elements within
   each sorted file.]\\
-  
 
 \end{enumerate}
+
+For each university, how do they sort the scores of participants
+  belonging to it? Please briefly describe a comparative sorting
+  algorithm that is appropriate for this purpose and a non-comparative
+  sorting algorithm that works in this setup.
+  
+  We can use merge sort or quick sort for our comparison based sorting technique. If we want to sort without it, we can use either count or radix because we know the range of the scores.
+  
+  How does the organizer sort the scores of participants given $k$
+  files, where each file includes the sorted scores of participants
+  from a specific university?  Please describe an algorithm with a
+  $O(n\log k)$ running time and justify its time complexity.
+  
+  Because each file is already sorted, we need to use a stable sort. Because it is $O(n\log k)$ we must use something such as merge sort or quick sort. Both of these have running time of $O(n \log k)$ in the average cause because each time we split. In this case, there are $n$ participants and $k$ files of an arbitrary size. Because each university sorts it, then the $k$ files must be these universities. All we do is split it for the sorting, and our answer should be $O(n \log k)$.
+  
+  I'm unsure on the 3rd part now.
 
 
 \subsubsection*{Problem 4} 
