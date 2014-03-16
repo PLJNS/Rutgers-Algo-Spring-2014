@@ -169,22 +169,18 @@ Assume that the projects and programmers match one to one. Your goal
 is to match each programmer to a project.
 
 \begin{enumerate}[label=\Alph*.]
-\item Show that any algorithm for this problem must need $\Omega( n
-\log{n} )$ meetings in the worst case.
-
-\item  Design a randomized algorithm for this problem that runs in
-expected time $O ( n \log{n} )$.
-\end{enumerate}
-
-Show that any algorithm for this problem must need $\Omega( n
-\log{n} )$ meetings in the worst case.
+\item \textbf{ Show that any algorithm for this problem must need $\Omega( n
+\log{n} )$ meetings in the worst case.}
 
 There are a total of $n$ projects and $n$ programmers. Since each programmer can only work on one job (regardless of outcome), and there are a total of $3$ outcomes. This gives us part of Master's Theorem: $T(n) = a$ where $a = 3$. We need to find the size of each project, which we can guess to be $b = 3$ because we know the answer already ($n \log n$). In fact, this answer makes sense because based on the responses of the programmer's we can find what ones they can do and what ones they can't. We can assume the cost done outside of the calls is instant (meaning talking to the manager's, we aren't concerned with this). Per Master's Theorem: $T(n) = 3(\frac{n}{3}) + 1 \to \log_3^3 = 1$ which is true, so our answer is $n^1 \log n$.
 
-Design a randomized algorithm for this problem that runs in
-expected time $O ( n \log{n} )$.
+\item  \textbf{Design a randomized algorithm for this problem that runs in
+expected time $O ( n \log{n} )$.}
 
 Our randomized algorithm can just be merge sort, we group the programmers in set's, where one set can't do the problem, one set can but wants more pay, and the last set can. Based on their responses, we have our groups to "merge". This algorithm is random because worst, average, and best are $O(n \log n)$.
+\end{enumerate}
+
+
 
 \subsection*{Part C (40 points)}
 
@@ -205,48 +201,30 @@ a final sorted list for all participants.
 
 \begin{enumerate}
 
-\item For each university, how do they sort the scores of participants
+\item \textbf{For each university, how do they sort the scores of participants
   belonging to it? Please briefly describe a comparative sorting
   algorithm that is appropriate for this purpose and a non-comparative
-  sorting algorithm that works in this setup.
+  sorting algorithm that works in this setup.}
 
-\item How does the organizer sort the scores of participants given $k$
+ We can use merge sort or quick sort for our comparison based sorting technique. If we want to sort without it, we can use either count or radix because we know the range of the scores.
+
+\item \textbf{How does the organizer sort the scores of participants given $k$
   files, where each file includes the sorted scores of participants
   from a specific university?  Please describe an algorithm with a
-  $O(n\log k)$ running time and justify its time complexity.
+  $O(n\log k)$ running time and justify its time complexity.}
 
-\item Suppose the organizer wants to figure out the participants of
+  Because each file is already sorted, we need to use a stable sort. Because it is $O(n\log k)$ we must use something such as merge sort or quick sort. Both of these have running time of $O(n \log k)$ in the average cause because each time we split. In this case, there are $n$ participants and $k$ files of an arbitrary size. Because each university sorts it, then the $k$ files must be these universities. All we do is split it for the sorting, and our answer should be $O(n \log k)$.
+
+\item \textbf{Suppose the organizer wants to figure out the participants of
   ranking $r$ among all participants. Given the $k$ sorted files, how
   does the organizer find the $r^{th}$ largest scores without sorting
   the scores of all participants?  Please describe an algorithm with
   $O(k (\sum_{i=1}^{k}\log m_{i}) )$ running time and justify its time
-  complexity. 
+  complexity. Can you do this in $O(\log k(\sum_{i=1}^{k}\log m_{i}))$ time?}
 
-Can you do this in $O(\log k(\sum_{i=1}^{k}\log m_{i}))$ time?
-
-[Hint: If $r$ is larger than $\dfrac{n}{2}$, the elements that have at
-  least $\dfrac{n}{2}$ elements larger than them should not be
-  considered. The problem is how to identify these elements within
-  each sorted file.]\\
+I don't know.
 
 \end{enumerate}
-
-For each university, how do they sort the scores of participants
-  belonging to it? Please briefly describe a comparative sorting
-  algorithm that is appropriate for this purpose and a non-comparative
-  sorting algorithm that works in this setup.
-  
-  We can use merge sort or quick sort for our comparison based sorting technique. If we want to sort without it, we can use either count or radix because we know the range of the scores.
-  
-  How does the organizer sort the scores of participants given $k$
-  files, where each file includes the sorted scores of participants
-  from a specific university?  Please describe an algorithm with a
-  $O(n\log k)$ running time and justify its time complexity.
-  
-  Because each file is already sorted, we need to use a stable sort. Because it is $O(n\log k)$ we must use something such as merge sort or quick sort. Both of these have running time of $O(n \log k)$ in the average cause because each time we split. In this case, there are $n$ participants and $k$ files of an arbitrary size. Because each university sorts it, then the $k$ files must be these universities. All we do is split it for the sorting, and our answer should be $O(n \log k)$.
-  
-  I'm unsure on the 3rd part now.
-
 
 \subsubsection*{Problem 4} 
 
@@ -271,8 +249,130 @@ in the above period (from 01/01/1943 until 12/31/2012) by one, i.e.,
 one crossword puzzle was not included in the database. We need to
 identify the date of the missing crossword puzzle.
 
-Design a linear-time algorithm that minimizes the amount of space that
-it is using to find the missing date. Ignore the effect of leap years.
+\textbf{Design a linear-time algorithm that minimizes the amount of space that
+it is using to find the missing date. Ignore the effect of leap years.}
+
+\emph{Prima facie}, two good candidates for this task is \emph{counting sort}
+and \emph{radix sort}. The reason being, both of them sport linear worst-case
+space complexity. However, due to the numerical nature of the problem and the
+need for a linear-time worst-case time complexity, lets picks \emph{counting
+sort} for our problem.
+
+Once we have our elements sorted, it will be a matter of traversing them to find
+the one which does not have its consecutive adjacent to it.
+
+So what does counting sort need? It needs an \emph{input}, our collection of 
+New York Time crossword puzzles from 01/01/1943 until 12/31/2012. It needs the
+length of the input, that is $n$. It needs a number $k$ such that no number can
+exceed this number in the range. And in terms of space complexity it's going
+to need a \emph{count array} and an \emph{output array}, along with a few other
+small variables.
+
+The way you would execute this algorithmically is you would need a hash function
+which would map the first date in the sequence to zero and the last date in the
+sequences to the number of dates in the sequence, that is $n$. Then, you would
+implement basic counting sort which would accept this $n$ as well as an filled
+array of crosswords (that is $n - 1$ in length). This would sort the crossword
+in linear time based on it's array with values between $0$ and $n$ with all
+a presumed count of $1$ (except our missing one). Then, you would loop over that
+sorted list and check to see if any date is not followed by it's consecutive date,
+and you've found our missing one.
+
+Here is a specific instantiation of the general guidelines I outlined above:
+
+\begin{verbatim}
+
+hash(crossword) {
+    // This function will hash 01/01/1943 to 0, 01/02/1943 to 2, ... 
+    // and 12/31/2012 to n. As it turns out, our n is 25567.
+    
+    // Hashing and normalizing date objects is possible in most or all 
+    // programming languages, and I'm not implementing it here to stay
+    // language-agnostic.
+    
+    // This is where I would use getDay, getMonth, and getYear.
+    // Here is a crude way of describing the needed code:
+    
+    if (crossword.getYear() == 1943) {
+       if(crossword.getMonth() == 1) {
+          if (crossword.getDay() == 1) {
+             return 0;
+          }
+          if (crossword.getDay() == 2) {
+             return 1;
+          }
+          if (crossword.getDay() == 3) {
+             return 2;
+          }
+          ...
+       }
+       ...
+    }
+    ...
+    
+    return x;
+}
+
+countingSortForCrosswords(crosswords, n) {
+   total = 0;   # variable used in algorithm
+   output[n];   # the output, that is sorted, array
+   count[n];    # used as a histogram 
+   oldCount[n]; # used to transfer values
+
+   # this is the histogram step, and will be presumably 1
+   # except for our missing crossword!
+   
+   for x in crosswords {      count[hash(x)] += 1;
+   }
+   
+   # this is the starting index step, notice that our maximum
+   # in the range is the same as the number of elements
+      for (int i = 0; i < n; i++) {      oldCount = count[i];      count[i] = total;      total += oldCount;
+   }
+   
+   # copy to output array step
+   
+   for x in crosswords {      output[count[hash(x)]] = x;      count[hash(x)] += 1;
+   }
+   
+   return output;
+}
+
+# returns the crossword before the missing one
+main(n) {
+   crosswords[n];
+   for (int i = 0; i < n; i++) {
+      crosswords[i] = getPuzzle(i);
+   }
+   
+   countingSortForCrosswords(crosswords, n);
+   
+   for (int i = 0; i < n - 1; i++) {
+      if (hash(crosswords[i]) != hash(crosswords[i + 1])) {
+         return i;
+      }
+   }
+}
+
+\end{verbatim}
+
+This will take linear time and require linear space. The reason for it taking
+linear time is that all the components of our algorithm are linear or constant.
+The hash function is going to be constant, as good hash functions are. That
+constant hash function uses only the constant functions that are provided to me.
+The counting sort algorithm will also be constant, each of my for loops operates
+a total of $n$ times. Finally, my main function will run all it's for loops
+in constant time relative to $n$, where the initialization loop will run as many
+times as there are crosswords, my sort will be linear, and my check will be linear.
+That is,
+
+$$\Omega(n + (n + n) + n) = O(n)$$
+
+Furthermore, it will require linear space because the crosswords are cached
+into an array of size $n$, the counting sort utilizes some variables and
+cache arrays of size $n$, and that's all I use.
+
+$$O(n)$$
 
 \subsection*{Part D (25 points)}
 
