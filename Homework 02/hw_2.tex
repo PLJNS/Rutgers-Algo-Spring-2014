@@ -82,13 +82,19 @@ and justify your answers.\\
 		\item $a = 16$, $b = 4$, where $a \geq 1$ and $b > 1$
 		\item $f(n) = n!$, consider Stirling's approximation
 		
-		\begin{itemize}
-		
-			\item $n\ln(n) - n +O(\ln(n)) = \ln(n!)$
-		
-		\end{itemize}
+			% $n\ln(n) - n +O(\ln(n)) = \ln(n!)$
 		
 		\item $\log_b a = \log_4 16 = 2$
+		
+	
+	\item If $n! = O(n^{2 - \epsilon}$) for some constant $\epsilon
+  > 0$, then $T(n) = \Theta(n^{log_ba})$.
+\item If $n! = \Theta(n^{2} log^kn)$ with $k \geq 0$, then
+  $T(n) = \Theta(n^{log_ba} log^{k+1}n)$. In most cases, $k = 0$.
+\item If $n! = \Omega(n^{2+\epsilon})$ with $\epsilon > 0$, and
+  $f(n)$ satisfies the regularity condition, then $T(n) = \Theta( f(n)
+  )$. The regularity condition specifies that $a f(\frac{n}{b}) \leq c
+  f(n)$ for some constant $c < 1$ and all sufficiently large $n$.
 	
 	\end{itemize}
 	
@@ -115,7 +121,9 @@ and justify your answers.\\
 	\begin{itemize}
 	
 		\item $a = 1$, $b = 1$ , where $a \geq 1$ and $b \not> 1$
-		\item Because $b \not> 1$, this problem is not solvable with Master theorem.
+		
+		$$ T(n) = T(n-1) + \log n $$
+		$$ T(n) \le 2(k2^{n}) + \log n  $$
 	
 	\end{itemize}
 	
@@ -386,10 +394,23 @@ where $m < n$. The $j$-th person is satisfied if he receives gifts
 that are worth at least $s_j$ dollars each. The task is to satisfy as
 many people as possible given that you have a knowledge of the gift
 amounts $a_i$ and the satisfaction requirements of each person
-$s_j$. Give an approximation algorithm for assigning rewards to people
-with a running time of $O(m\log m+n)$. What is the approximation ratio
-of your algorithm and why?
+$s_j$. 
 
+\begin{itemize}
+\item \textbf{Give an approximation algorithm for assigning rewards to people
+with a running time of $O(m\log m+n)$.} 
+
+Lets take a look at what information we have:
+
+\begin{enumerate}
+\item There are $n$ gifts.
+\item A gift $i$ is worth $a_i$.
+\item There are $m$ people, and this is less than the number of gifts.
+\item A person $j$ is satisfied if the value of gifts is $s_j$.
+\end{enumerate}
+
+\item \textbf{What is the approximation ratio of your algorithm and why?}
+\end{itemize}
 
 \end{document}
 
