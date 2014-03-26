@@ -1,0 +1,149 @@
+\documentclass[11pt]{article}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb, graphics, setspace}
+\usepackage[noline,noend,ruled,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\title{Assignment 3}
+
+\author{Paul Jones and Matthew Klein \\
+		Professor Professor Kostas Bekris\\
+		Design and Analysis of Computer Algorithms (01.198.344)}
+
+\date{\today}
+
+\usepackage{setspace}
+\singlespacing
+
+\usepackage[letterpaper]{geometry}
+\geometry{top=1in, bottom=1in, left=.5in, right=.5in}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Paul Jones and Matthew Klein \\ Professor Professor Kostas Bekris}
+\chead{}
+\rhead{Design and Analysis of Computer Algorithms \\ \today}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+\begin{document}
+
+\pagebreak
+
+\section*{Part A (35 points)}
+
+\subsection*{Problem 1} You are participating in the design of a
+new stepping stones challenge for the remake of the cult Japanese TV
+show ``Takeshi's Castle''.\\
+
+\noindent The challenge involves a team of two people tied with a rope
+that need to walk over a sequence of stepping stones. The first
+teammate is allowed to go over the stepping stones that are painted
+red $\{r_0, \ldots, r_n\}$, while the second teammate is allowed to go
+over the stepping stones that are painted blue $\{b_0, \ldots,
+b_m\}$. For the team to win, the two players have to walk over all the
+stepping stones in the corresponding sequence while they are connected
+with the rope. The teammates are not allowed to backtrack. At each
+point in time, either one of the players can jump from her current
+stone to the next one and the other one stays at his current stone, or
+both of them jump simultaneously from their current stones to the next
+ones. Such a jump is obviously feasible only if the distances between
+the two players before and after the jump are less than the length of
+the rope connecting them.\\
+
+\noindent The TV show producer has already built the two sequences of
+red and blue stepping stones. Given the coordinates of the stepping
+stones, your task is to select the minimum length of the rope for
+which it is possible for the two players to win the game. This is what
+will make the show entertaining for the audience!\\
+
+\noindent Provide an algorithm for this computation and argue its
+running time.
+
+
+\section*{Part B (35 points)}
+
+\subsection*{Problem 2}
+
+\begin{enumerate}[label=\Alph*.]
+
+\item You have a collection of $n$ distinct chopsticks of
+length $l_{1},\dots,l_{n}$. Any two of them can be paired for use if
+the length of them differ at most $k$. How can you easily pair as many
+of the chopsticks as possible? Describe a greedy algorithm of time
+complexity $O(n\log n)$ to solve this problem and prove the
+correctness of your algorithm.\\
+
+\item Consider now a variant of the above problem. You
+can still only pair chopsticks that differ at most $k$ in length. But
+now a value $w_{i}$ is also associated with each individual
+chopstick. You want to maximize the sum of the values of the
+chopsticks that have been paired.\\
+
+\noindent For example, suppose you have 7 chopsticks of length
+$5,2,3,11,9,12,16$ and corresponding values $1,1,2,5,3,3,10$. You are
+allowed to pair chopsticks that differ by at most 3 units in
+length. Then one of the optimal solutions here is $\{ (2,3),(9,11) \}$
+of optimal value $1+2+3+5=11$.\\
+
+\noindent How can you pair the chopsticks so as to maximize the value?
+Describe a dynamic programming algorithm of time complexity $O(n^{2})$
+to solve this problem. Can you do better than $O(n^{2})$?\\
+
+\end{enumerate}
+
+\section*{Part C (20 points)}
+
+\subsection*{Problem 3} In the robotics lab the new robot has just
+arrived. The robot has the ability to construct a topological map of
+the environment, such as the graph shown in Figure
+\ref{fig:problem3}. The robot is allowed to move only forward along
+the directions of the edges on the topological map. Moreover, the
+graph is being constructed in such a way that will prevent the robot
+to execute loops, i.e., the robot is not able to visit a node that it
+has already visited.\\
+
+\begin{enumerate}[label=\Alph*.]
+
+\item Given a start location for your robot and a target
+location, provide an efficient algorithm that will return all the
+possible paths from the start to the target.  What is the running time
+for your algorithm?
+
+\item You want to check if the topological map provides
+enough information for your robot to be able to visit all the rooms so
+as to clean them. Provide an efficient algorithm that will be able to
+check if there is a path for the robot on the graph that can visit all
+the rooms (i.e., nodes on the graph).
+\end{enumerate}
+
+\section*{Part D (20 points)}
+
+\subsection*{Problem 4} You are preparing a banquet where the
+guests are government officials from many different countries. In
+order to avoid unnecessary troubles, you are asked to check the list
+of international conflicts in the last ten years. Then, you will
+assign the guests to two tables, such that in each table, any two
+guests are not from countries that had conflicts in the last ten
+years.\\
+
+\noindent Provide an efficient algorithm that determines whether it is
+possible to make such an assignment. If it is possible to do so, the
+algorithm should return the assignment of these two tables. What is
+the running time?
+
+\end{document}
+
