@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  1 APR 2014 21:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  2 APR 2014 09:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -484,12 +484,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--72
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--91
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--97
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
@@ -517,14 +517,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--107
  []
 
 
-LaTeX Warning: Reference `fig:problem3' on page 1 undefined on input line 115.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--120
-
- []
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 25.2842pt.
  We now make it that large for the rest of the document.
@@ -533,7 +525,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 137--144
+Underfull \hbox (badness 10000) in paragraph at lines 112--120
+
+ []
+
+<paths.png, id=13, 876.27374pt x 658.46pt>
+File: paths.png Graphic file (type png)
+ <use paths.png>
+Package pdftex.def Info: paths.png used on input line 124.
+(pdftex.def)             Requested size: 271.0125pt x 203.64827pt.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--161
 
  []
 
@@ -543,30 +549,35 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] (./hw_3.aux)
+[2 <./paths.png>]
 
-LaTeX Warning: There were undefined references.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 25.2842pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
- ) 
+[3] (./hw_3.aux) ) 
 Here is how much of TeX's memory you used:
- 7333 strings out of 493315
- 109435 string characters out of 6137904
- 242942 words of memory out of 5000000
- 10658 multiletter control sequences out of 15000+600000
- 10363 words of font info for 48 fonts, out of 8000000 for 9000
+ 7344 strings out of 493315
+ 109605 string characters out of 6137904
+ 242950 words of memory out of 5000000
+ 10669 multiletter control sequences out of 15000+600000
+ 10429 words of font info for 47 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,10n,43p,457b,206s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on hw_3.pdf (2 pages, 83612 bytes).
+ 38i,10n,43p,905b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
+0.pfb>
+Output written on hw_3.pdf (3 pages, 503055 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 47 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 7169 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7686 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -70,8 +70,8 @@ stones, your task is to select the minimum length of the rope for
 which it is possible for the two players to win the game. This is what
 will make the show entertaining for the audience!\\
 
-\noindent Provide an algorithm for this computation and argue its
-running time.
+\noindent \textbf{Provide an algorithm for this computation and argue its
+running time.}
 
 
 This problem is the same as the edit distance but instead of two words we have from $r_0,r_n$ and $b_0,b_n$. Similar to that problem from class, we must solve a prefix of $r_0,r_j$ and $b_0,b_j$. There are three sub problems: $r[j]$ and a gap, $b[j]$ and a gap, or $r[j],b[j]$ meaning they are the same or different and nothing needs to be added. We can use what is in the DPV book, $E(i,j) = min\{1+E(i-1,j), 1+E(i,j-1), diff(i,j)+E(i-1,j-1)\}$. where $diff$ is the difference, $0$ if they are the same and $1$ if they are different. Rather than finding the edit distance for words, we find the edit difference between the movements. Our max number, $n$, is the length of the rope. If we need to add a gap, we increase by one. If they jump together, then we do not. The largest this distance can be is the length of the rope. Because of this, the total running time to compute this is $O(nm)$.
@@ -82,18 +82,18 @@ This problem is the same as the edit distance but instead of two words we have f
 
 \begin{enumerate}[label=\Alph*.]
 
-\item You have a collection of $n$ distinct chopsticks of
+\item \textbf{You have a collection of $n$ distinct chopsticks of
 length $l_{1},\dots,l_{n}$. Any two of them can be paired for use if
 the length of them differ at most $k$. How can you easily pair as many
 of the chopsticks as possible? Describe a greedy algorithm of time
 complexity $O(n\log n)$ to solve this problem and prove the
-correctness of your algorithm.\\
+correctness of your algorithm.}\\
 
-\item Consider now a variant of the above problem. You
+\item \textbf{Consider now a variant of the above problem. You
 can still only pair chopsticks that differ at most $k$ in length. But
 now a value $w_{i}$ is also associated with each individual
 chopstick. You want to maximize the sum of the values of the
-chopsticks that have been paired.\\
+chopsticks that have been paired.}\\
 
 \noindent For example, suppose you have 7 chopsticks of length
 $5,2,3,11,9,12,16$ and corresponding values $1,1,2,5,3,3,10$. You are
@@ -118,18 +118,35 @@ graph is being constructed in such a way that will prevent the robot
 to execute loops, i.e., the robot is not able to visit a node that it
 has already visited.\\
 
+\begin{figure}[h]
+  \centering
+  \caption{An example of a directed graph that the robot build for this map.}
+    \includegraphics[width=0.5\textwidth]{paths}
+    \label{fig:problem3}
+\end{figure}
+
 \begin{enumerate}[label=\Alph*.]
 
-\item Given a start location for your robot and a target
+\item \textbf{Given a start location for your robot and a target
 location, provide an efficient algorithm that will return all the
 possible paths from the start to the target.  What is the running time
-for your algorithm?
+for your algorithm?}
 
-\item You want to check if the topological map provides
+The breadth-first search algorithm will return all possible paths
+between two points in a directed acyclic graph.
+
+\begin{verbatim}
+procedure all-paths-dag(x, y, G)
+  Input:  Distinct vertices x and y in the directed-acyclic graph G
+  Output: All possible paths from the the start to the target
+  
+\end{verbatim}
+
+\item \textbf{You want to check if the topological map provides
 enough information for your robot to be able to visit all the rooms so
 as to clean them. Provide an efficient algorithm that will be able to
 check if there is a path for the robot on the graph that can visit all
-the rooms (i.e., nodes on the graph).
+the rooms (i.e., nodes on the graph).}
 \end{enumerate}
 
 \section*{Part D (20 points)}
@@ -142,10 +159,10 @@ assign the guests to two tables, such that in each table, any two
 guests are not from countries that had conflicts in the last ten
 years.\\
 
-\noindent Provide an efficient algorithm that determines whether it is
+\noindent \textbf{Provide an efficient algorithm that determines whether it is
 possible to make such an assignment. If it is possible to do so, the
 algorithm should return the assignment of these two tables. What is
-the running time?
+the running time?}
 
 \end{document}
 
