@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  26 MAR 2014 11:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  1 APR 2014 21:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -484,17 +484,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--72
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--89
+Underfull \hbox (badness 10000) in paragraph at lines 85--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--95
+Underfull \hbox (badness 10000) in paragraph at lines 92--97
 
  []
 
 
-Overfull \hbox (8.93002pt too wide) in paragraph at lines 96--101
+Overfull \hbox (8.93002pt too wide) in paragraph at lines 98--103
 \OT1/cmr/m/n/10.95 (-10) For ex-am-ple, sup-pose you have 7 chop-sticks of leng
 th $5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 (-10) 2\OML/cmm/m/it/10.95 ; \OT1
 /cmr/m/n/10.95 (-10) 3\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 (-10) 11\OML/cmm
@@ -507,20 +507,20 @@ OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 (-10) 3\OML/cmm/m/it/10.95 ; \OT1/cmr/m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--101
+Underfull \hbox (badness 10000) in paragraph at lines 98--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--105
+Underfull \hbox (badness 10000) in paragraph at lines 104--107
 
  []
 
 
-LaTeX Warning: Reference `fig:problem3' on page 1 undefined on input line 113.
+LaTeX Warning: Reference `fig:problem3' on page 1 undefined on input line 115.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--118
+Underfull \hbox (badness 10000) in paragraph at lines 112--120
 
  []
 
@@ -533,7 +533,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 135--142
+Underfull \hbox (badness 10000) in paragraph at lines 137--144
 
  []
 
@@ -549,13 +549,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 7331 strings out of 493315
- 109421 string characters out of 6137904
+ 7333 strings out of 493315
+ 109435 string characters out of 6137904
  242942 words of memory out of 5000000
  10658 multiletter control sequences out of 15000+600000
- 10312 words of font info for 47 fonts, out of 8000000 for 9000
+ 10363 words of font info for 48 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,10n,43p,271b,206s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,43p,457b,206s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -563,7 +563,7 @@ Here is how much of TeX's memory you used:
 sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
 /local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
 cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on hw_3.pdf (2 pages, 80817 bytes).
+Output written on hw_3.pdf (2 pages, 83612 bytes).
 PDF statistics:
  39 PDF objects out of 1000 (max. 8388607)
  27 compressed objects within 1 object stream
