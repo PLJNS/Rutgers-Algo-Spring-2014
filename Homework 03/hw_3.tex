@@ -132,14 +132,18 @@ location, provide an efficient algorithm that will return all the
 possible paths from the start to the target.  What is the running time
 for your algorithm?}
 
-The breadth-first search algorithm will return all possible paths
-between two points in a directed acyclic graph.
-
 \begin{verbatim}
-procedure all-paths-dag(x, y, G)
-  Input:  Distinct vertices x and y in the directed-acyclic graph G
-  Output: All possible paths from the the start to the target
-  
+def find_all_paths(graph, start, end, path=[]):
+    path = path + [start]
+    if start == end:
+        return [path]
+    paths = []
+    for node in graph[start]:
+        if node not in path:
+            newpaths = find_all_paths(graph, node, end, path)
+            for newpath in newpaths:
+                paths.append(newpath)
+    return paths 
 \end{verbatim}
 
 \item \textbf{You want to check if the topological map provides
@@ -149,6 +153,12 @@ check if there is a path for the robot on the graph that can visit all
 the rooms (i.e., nodes on the graph).}
 \end{enumerate}
 
+Wikipedia:
+\begin{enumerate}
+\item Begin at any arbitrary node of the graph, G
+\item Proceed from that node using either depth-first or breadth-first search, counting all nodes reached.
+\item Once the graph has been entirely traversed, if the number of nodes counted is equal to the number of nodes of G, the graph is connected; otherwise it is disconnected.
+\end{enumerate}
 \section*{Part D (20 points)}
 
 \subsection*{Problem 4} You are preparing a banquet where the
