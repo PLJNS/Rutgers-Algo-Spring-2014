@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  2 APR 2014 09:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  2 APR 2014 09:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -560,7 +560,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 Here is how much of TeX's memory you used:
  7344 strings out of 493315
  109605 string characters out of 6137904
- 242950 words of memory out of 5000000
+ 242954 words of memory out of 5000000
  10669 multiletter control sequences out of 15000+600000
  10429 words of font info for 47 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -574,7 +574,7 @@ cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
 mr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
 0.pfb>
-Output written on hw_3.pdf (3 pages, 503055 bytes).
+Output written on hw_3.pdf (3 pages, 503105 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
  32 compressed objects within 1 object stream
