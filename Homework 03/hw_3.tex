@@ -105,6 +105,18 @@ of optimal value $1+2+3+5=11$.\\
 Describe a dynamic programming algorithm of time complexity $O(n^{2})$
 to solve this problem. Can you do better than $O(n^{2})$?\\
 
+\noindent \textbf{Describe a greedy algorithm of time
+complexity $O(n\log n)$ to solve this problem and prove the
+correctness of your algorithm.}\\
+
+A greedy algorithm for this would be to take every chopstick $n_i$ and a second one, $n_j$ that differ by $k$ as many times as possible. When we run out of two pairs $i,j$ that are different by $k$, we take two pairs that differ by $k-i$ until the set is empty. This is our greedy algorithm. This takes $O(n\log n)$. Why? Because each time we're taking 2 chopsticks (a tree basically) and we continue this $n$ times.
+
+\noindent \textbf{Describe a dynamic programming algorithm of time complexity $O(n^{2})$ to solve this problem. Can you do better than $O(n^{2})$?}\\
+
+A dynamic programming algorithm for this is similar to the knapsack problem. $K(w,j) = max\{K(w-wk,j-1) + v_j,K(w,j-1)\}$ where $0 \leq j \leq n$. $K$ is the "knapsack" in this problem, or holding the chopsticks. Rather than taking each chopstick, we take two at a time. This is $O(nW)$. \\
+\\
+It is possible to do better than $O(n^2)$ just by using a sort function on the chopsticks and pairing the best match (from our greedy algorithm).
+
 \end{enumerate}
 
 \section*{Part C (20 points)}
