@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  2 APR 2014 20:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  4 APR 2014 19:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -551,18 +551,27 @@ Package pdftex.def Info: paths.png used on input line 136.
 (pdftex.def)             Requested size: 271.0125pt x 203.64827pt.
 
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 25.2842pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2 <./paths.png>]
 Package microtype Info: Loading generic settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--183
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 25.2842pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 25.2842pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3 <./paths.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 243--250
 
  []
 
@@ -572,15 +581,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3] (./hw_3.aux) ) 
+[4]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 25.2842pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5] (./hw_3.aux) ) 
 Here is how much of TeX's memory you used:
- 7348 strings out of 493315
- 109633 string characters out of 6137904
+ 7359 strings out of 493315
+ 109708 string characters out of 6137904
  242954 words of memory out of 5000000
- 10669 multiletter control sequences out of 15000+600000
- 10531 words of font info for 49 fonts, out of 8000000 for 9000
+ 10670 multiletter control sequences out of 15000+600000
+ 10786 words of font info for 54 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,10n,43p,905b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,43p,985b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
@@ -590,10 +606,10 @@ cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
 mr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
 0.pfb>
-Output written on hw_3.pdf (3 pages, 505710 bytes).
+Output written on hw_3.pdf (5 pages, 512430 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 53 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  7686 words of extra memory for PDF output out of 10000 (max. 10000000)
 

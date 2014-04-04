@@ -145,18 +145,26 @@ possible paths from the start to the target.  What is the running time
 for your algorithm?}
 
 \begin{verbatim}
-def find_all_paths(graph, start, end, path=[]):
-    path = path + [start]
-    if start == end:
-        return [path]
-    paths = []
-    for node in graph[start]:
-        if node not in path:
-            newpaths = find_all_paths(graph, node, end, path)
-            for newpath in newpaths:
-                paths.append(newpath)
-    return paths 
+set_of_all_paths(G, s, e, p=[]):
+    if s == e {
+        return s;
+    }
+    p = [];
+    for (n in G[s]) {
+        if n not in p {
+            nps = set_of_all_paths(G, n, e, p)
+            for np in nps {
+                paths.append(np);
+            }
+        }
+    }
+    return p; 
 \end{verbatim}
+
+This algorithm exploits DFS, where the expensive operation is the recursive
+call. This will happen in the worst case the number of edges.
+
+$$O(|E|)$$
 
 \item \textbf{You want to check if the topological map provides
 enough information for your robot to be able to visit all the rooms so
@@ -165,12 +173,67 @@ check if there is a path for the robot on the graph that can visit all
 the rooms (i.e., nodes on the graph).}
 \end{enumerate}
 
-Wikipedia:
-\begin{enumerate}
-\item Begin at any arbitrary node of the graph, G
-\item Proceed from that node using either depth-first or breadth-first search, counting all nodes reached.
-\item Once the graph has been entirely traversed, if the number of nodes counted is equal to the number of nodes of G, the graph is connected; otherwise it is disconnected.
-\end{enumerate}
+There are two ways this problem could be interpreted: (1) you want an algorithm
+that will travel to every node in a single path at least once, or (2) you want
+an algorithm to see if every node is reachable in principle in any given trip.
+The ambiguity is in the phrase ``is a path for the robot on the graph that can 
+visit all the rooms,'' specifically whether the robot has one or more trips.
+If the robot only has one trip, that is the first interpretation. If this
+robot can have as many trips as it wants, this is a connectedness problem.
+The first interpretation is the traveling salesman problem, especially if a
+shortest path between all rooms is wanted. The second interpretation is about
+the connectedness problem. As it is easier, I will first solve the second 
+problem, and then solve the second problem. 
+
+In order to check connectedness, you need to visit every node and check the
+resulting order of the graph against the number of rooms on your topographical
+map.
+You can use either BFS or DFS to complete this task. Roughly, you are going
+to begin on any given node, utilize your traversal algorithms, and then compare
+the number of traversed nodes to the number of total nodes. Presumably, if I have
+the topological map, I also have the number of nodes on that map. If the number
+of nodes my DFS returns is equal to number of nodes in my model, then the robot
+can get to every node in the graph with sufficient trips. 
+If the returned number is less than the number on my
+model, then there is at least one island. If the number is more than the number
+on my model, my model is missing at least a few nodes.
+
+The runtime of checking connectedness in this way will be as follows. There
+is one step for checking the size of my model. There is then, at worst, 
+the number of steps equal to the number of edges of the graph. Then there is
+a step to compare the number returned to the number of my model.
+
+$$O(|E|)$$
+
+In order to get the shortest path between two nodes, we are going to
+need to use a more sophisticated algorithm, specifically the Floyd-Warshall algorithm. My model gives me two things: my start node, and because it's
+a DAG I have access to, my end node. There can be multiple endings to a
+DAG. But in order to have a path that can visit every node in a shortest
+path for a DAG, there need be one end point. This can be ascertained from the
+topological map that the robot has built. This means that the graph must
+be linearized for there to be a shortest path for all nodes.
+
+The Floyd-Warshall algorithm operates by finding the set of permissible
+intermediate nodes. This happens one node at a time, and updates
+the shortest path length at each stage. After this operation has
+continued for some time, it will grow to set of all $V$, which is
+when all vertices are allowed to be on all paths.
+
+Specifically, the algorithm is as follows:
+
+\begin{verbatim}
+for i=1 to n: 
+  for j = 1 to n:    dist(i, j, 0) = infinity 
+for all (i, j) in E:  dist(i, j, 0) = l(i, j) 
+for k = 1 to n:  for i=1 to n: 
+    for j = 1 to n:      dist(i,j,k)=min{dist(i,k,k-1)+dist(k,j,k-1), dist(i,j,k-1)}
+\end{verbatim}
+
+Floyd-Warshall is better than the default algorithm that this, which would
+visit every node and compute the distance to the target.
+
+$$O(|V|^3)$$
+
 \section*{Part D (20 points)}
 
 \subsection*{Problem 4} You are preparing a banquet where the
@@ -185,6 +248,22 @@ years.\\
 possible to make such an assignment. If it is possible to do so, the
 algorithm should return the assignment of these two tables. What is
 the running time?}
+
+This is an instantiation of the bipartite graph problem. Make every country
+on the list a node on a graph. Define an edge between two nodes as if there
+has been a conflict between the two countries. Take any given node on this
+graph an color it ``blue'' (for democracy). 
+Visit all the neighbors of that now ``blue'' node and color those ``red''
+(for commies). For every subsequent visit, switch color. If in this 
+process you encounter a node that is differently colored than the color
+you intend to use, there is no valid seating arrangement. When you run out
+of nodes to color, you have your solution, where the blue colors will be one
+table and the red colors another table. This will run in linear-time, worst-case,
+because the worse-case is the successful one, where each node is visited once.
+It will be equal to the number of edges, as they will each be touched once,
+much the same way, in fact exactly, as DFS.
+
+$$O(|E|)$$
 
 \end{document}
 
