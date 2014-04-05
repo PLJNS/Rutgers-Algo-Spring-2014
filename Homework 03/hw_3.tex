@@ -74,7 +74,7 @@ will make the show entertaining for the audience!\\
 running time.}
 
 
-This problem is the same as the edit distance but instead of two words we have from $r_0,r_n$ and $b_0,b_n$. Similar to that problem from class, we must solve a prefix of $r_0,r_j$ and $b_0,b_j$. There are three sub problems: $r[j]$ and a gap, $b[j]$ and a gap, or $r[j],b[j]$ meaning they are the same or different and nothing needs to be added. We can use what is in the DPV book, $E(i,j) = min\{1+E(i-1,j), 1+E(i,j-1), diff(i,j)+E(i-1,j-1)\}$. where $diff$ is the difference, $0$ if they are the same and $1$ if they are different. Rather than finding the edit distance for words, we find the edit difference between the movements of each player. Our max number, $n$, is the length of the rope. If we need to add a gap, we increase by one. A gap means that either play moves while they other stays still. If they jump together, then we do not. The largest this distance can be is the length of the rope. Because of this, the total running time to compute this is $O(nm)$.
+This problem is the same as the edit distance but instead of two words we have from $r_0,r_n$ and $b_0,b_n$. Similar to that problem from class, we must solve a prefix of $r_0,r_j$ and $b_0,b_j$. There are three sub problems: $r[j]$ and a gap, $b[j]$ and a gap, or $r[j],b[j]$ meaning they are the same or different and nothing needs to be added. We can use what is in the DPV book, $E(i,j) = min\{1+E(i-1,j), 1+E(i,j-1), diff(i,j)+E(i-1,j-1)\}$. where $diff$ is the difference, $0$ if they are the same and $1$ if they are different. Rather than finding the edit distance for words, we find the edit difference between the movements of each player. Our max number, $n$, is the length of the rope. If we need to add a gap, we increase by one. A gap means that either play moves while they other stays still. If they jump together, then we do not. The largest this distance between the two people can be is the length of the rope. Because of this, the total running time to compute this is $O(nm)$. We make a matrix just like the edit distance problem. The minimum length of the rope will be at the bottom most right of the matrix we make.
 
 \section*{Part B (35 points)}
 
@@ -223,10 +223,14 @@ Specifically, the algorithm is as follows:
 
 \begin{verbatim}
 for i=1 to n: 
-  for j = 1 to n:    dist(i, j, 0) = infinity 
-for all (i, j) in E:  dist(i, j, 0) = l(i, j) 
-for k = 1 to n:  for i=1 to n: 
-    for j = 1 to n:      dist(i,j,k)=min{dist(i,k,k-1)+dist(k,j,k-1), dist(i,j,k-1)}
+  for j = 1 to n:
+    dist(i, j, 0) = infinity 
+for all (i, j) in E:
+  dist(i, j, 0) = l(i, j) 
+for k = 1 to n:
+  for i=1 to n: 
+    for j = 1 to n:
+      dist(i,j,k)=min{dist(i,k,k-1)+dist(k,j,k-1), dist(i,j,k-1)}
 \end{verbatim}
 
 Floyd-Warshall is better than the default algorithm that this, which would

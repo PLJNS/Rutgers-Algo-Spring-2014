@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  4 APR 2014 19:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  4 APR 2014 20:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -512,11 +512,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--103
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--107
-
- []
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 25.2842pt.
  We now make it that large for the rest of the document.
@@ -525,6 +520,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 104--107
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 108--111
 
  []
@@ -590,13 +590,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [5] (./hw_3.aux) ) 
 Here is how much of TeX's memory you used:
- 7359 strings out of 493315
- 109708 string characters out of 6137904
+ 7361 strings out of 493315
+ 109722 string characters out of 6137904
  242954 words of memory out of 5000000
  10670 multiletter control sequences out of 15000+600000
- 10786 words of font info for 54 fonts, out of 8000000 for 9000
+ 10837 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,10n,43p,985b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,43p,1149b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
@@ -606,7 +606,7 @@ cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
 mr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
 0.pfb>
-Output written on hw_3.pdf (5 pages, 512430 bytes).
+Output written on hw_3.pdf (5 pages, 512558 bytes).
 PDF statistics:
  53 PDF objects out of 1000 (max. 8388607)
  36 compressed objects within 1 object stream
