@@ -1,0 +1,286 @@
+\documentclass[11pt]{article}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb, graphics, setspace}
+\usepackage[noline,noend,ruled,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{graphics}
+\usepackage{multirow}
+\usepackage{verbatim}
+\usepackage[T1]{fontenc}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage[noline,noend,ruled,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\title{Assignment 3}
+
+\author{Paul Jones and Matthew Klein \\
+		Professor Kostas Bekris\\
+		Design and Analysis of Computer Algorithms (01.198.344)}
+
+\date{\today}
+
+\usepackage{setspace}
+\singlespacing
+ \usepackage{url} 
+\usepackage[letterpaper]{geometry}
+\geometry{top=1in, bottom=1in, left=.5in, right=.5in}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Paul Jones and Matthew Klein \\ Professor Kostas Bekris}
+\chead{}
+\rhead{Design and Analysis of Computer Algorithms \\ Rutgers University}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+\begin{document}
+
+\subsection*{Problem 1: [25 points]} After the departure of Storm
+Sandy, the small town of New Town suffered an electricity power
+shortage. After this experience, the local electricity agent decided
+to create plans to better handle future events. The idea is to send
+out immediately after the power failure a truck to investigate the
+damage along every street in the town. In order to recover the
+electricity network as soon as possible, they want to find an
+efficient tour so that the truck visits each street exactly once and
+then goes back to the town headquarters. Suppose each street in New
+Town is a two-way street. The task is to find whether there exists a
+tour that visits each street only once and then goes back to the
+starting point.\\
+
+\begin{enumerate}[label=\Alph*.]
+\item  Show that the problem has a solution if and only if
+there are no dead ends and no $n$-way junctions in New Town, where $n$
+is odd, i.e., each intersection in the town has an even degree.
+
+\item  If such tour exists, please describe an efficient
+algorithm to find the tour in linear time, i.e., in at most $O(|V| +
+|E|)$ time, where $V$ is the set of junctions and $E$ is the set of
+streets.
+\end{enumerate}
+
+\subsection*{Problem 2: [25 points]} In a chemistry class, the
+professor asks you to synthesize products using existing
+chemicals. For instance, 2 parts of chemical A produces 1 part of
+chemical B, or 3 parts of chemical C can give us 1 part of chemical
+D. Lets assume that we have $n$ different chemicals that we can
+mix. The production ratio given two chemicals is fixed and does not
+change. These ratios are given in an $n \times n$ matrix, between all
+the chemicals. In particular, using $x$ parts of chemical $i$ you will
+receive $R_{ij} \cdot x$ parts of chemical $j$, or using $y$ parts of
+chemical $j$ you will receive $R_{ji} \cdot y$ parts of chemical
+$i$. Note that $R_{ij}$ is not necessarily an integer, it can be a
+real number.\\
+
+\noindent Because of the principle of mass conservation the ratios
+have to satisfy the following requirement: $R_{ij} \cdot R_{ji} <
+1$. This means that converting an amount of chemical $i$ to chemical
+$j$ and then back to chemical $i$ should result in a smaller quantity
+of chemical $i$ relatively to the original one.\\
+
+\begin{enumerate}[label=\Alph*.]
+\item  The Chemistry professor asks from you the
+following. Given the $n \times n$ matrix, find the best sequence of
+chemical reactions to produce the most of chemical $D$ given an
+available quantity of chemical $A$. As mentioned before there are $n$
+different chemicals you can use and the matrix specifies the
+production ratios of all corresponding reactions. Provide an algorithm
+for finding the best sequence. Argue about the running time of your
+algorithm.
+
+\item  One of the teams found out that using chemical
+$i_1$ to produce chemical $i_2$, then chemical $i_3$, \dots, then
+chemical $i_k$ and back to $i_1$ results in a bigger quantity of
+chemical $i_1$ than the original one, i.e., $R_{i_1,i_2} \cdot
+R_{i_2,i_3} \cdot \ldots \cdot R_{i_k,i_1} \geq 1$. Is this a problem
+in the ratio matrix or the students did something wrong in their
+calculations? Provide an efficient algorithm that can detect if such
+an impossible sequence of chemical reactions seems feasible given the
+$n \times n$ production ratio matrix. Argue about the running time of
+your algorithm.
+\end{enumerate}
+
+\subsection*{Problem 3: [25 points]} Consider a courier company with
+a big network of transfer stations and trucks. You are responsible for
+coordinating the routing of packages through the network. You have
+access to and the database indicating the departure/arrival locations
+and times for $m$ trucks among $n$ transfer locations.\\
+
+\noindent You have to design an algorithm that receives a package's
+origin and destination location (the location always corresponds to
+one of the transfer stations), then output the list of trucks that can
+allow the package to arrive at the destination as early as
+possible. Note that in every intermediate transfer station, it takes
+about an hour for a package to move from a truck to another. You need
+to take this time into account.\\
+
+\noindent Give an algorithm as efficient as possible to solve this
+problem, argue its running time, and prove its correctness.\\
+
+\subsection*{Problem 4: [35 points]} The clash of kings has come to an end in
+the land of Westeros and the winds of winter have passed... The Grand
+Maester has proposed a series of jousting tournaments to celebrate the
+events. These tournaments will be used to decide who are the finest
+knights in the Seven Kingdoms that should be selected as new members
+of the Kingsguard.\\
+
+\noindent Every town in Westeros wants to host such a tournament. Even
+Pike at the Iron Islands wants to host a tournament, although the
+ironborn are not known to hold any love for the peoples of the
+mainland...\\
+
+\noindent This posed a challenge for the Grand Maester. How should he
+rank the knights given a large number of tournaments and different
+outcomes at each tournament? He asked the advice of the Citadel and
+selected the following strategy.\\
+
+\noindent Each local Maester will be responsible to report a ranking
+of the knights at each individual tournament. Then, it is possible to
+define a preference score between two knights:
+$$d(A,B) = \textrm{ \{ the number of tournaments knight A was ranked
+  higher than knight B\} }$$ Obviously, if $d(A,B) > d(B,A)$, then
+knight $A$ is preferred as a member of the Kingsguard over candidate
+$B$.\\
+
+\noindent Given this preference score, however, it may not always be
+possible to select a global ranking for all the knights. For instance,
+Jamie Lannister may have ranked higher than Barristan Selmy in more
+tournaments, and Barristan Selmy may have ranked higher than Loras
+Tyrell in more tournaments but Loras Tyrell may still have ranked
+higher than Jamie Lannister in more tournaments. For instance,
+consider the following outcomes for the three knights in three
+tournaments:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+& King's Landing Tourney  & Winterfell Tourney  & Casterly Rock
+Tourney\\
+\hline
+Jamie (J) & 1$^{st}$ & 2$^{nd}$ & 3$^{rd}$\\
+Barristan (B) & 2$^{nd}$ & 3$^{rd}$ & 1$^{st}$\\
+Loras (L) & 3$^{rd}$ & 1$^{st}$ & 2$^{nd}$\\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent In this case, $d(J,B) = d(B,L) = d(L,J) = 2$, and we have a
+rock/paper/scissors situation in terms of preference: Jamie >
+Barristan > Loras > Jamie. \\
+
+\noindent To address such issues and provide a global ranking for the
+knights given their rankings in individual events, the idea of the
+Grand Maester and the Citadel is the following:\\
+
+\noindent For each pair of knights $A$ and $B$ it is possible to
+identify a ``preference sequence'' $s[A,B]$ of knights that might
+imply that $A$ is more powerful than $B$. Such a sequence of size $m$
+has the following properties:
+\begin{itemize}
+\item $s_1 = A$ and $s_m = B$
+\item $\forall\ i \in [1,m-1]:$ $d[s_i,s_{i+1}] > d[s_{i+1},s_i]$
+\end{itemize}
+\noindent The ``strength of a preference sequence is defined as the
+minimum preference score along the sequence: $$ t( s[A,B] ) =
+\min_{\forall i \in [1,m-1]} d[s_i,s_{i+1}].$$ 
+
+\noindent The ``strongest preference sequence'' $s^*[A,B]$ is the
+preference sequence between the two knights $A$ and $B$ that has the
+maximum strength:
+$$s^*[A,B] = argmax_{\forall s[A,B]} t( s[A,B] ).$$ 
+
+\noindent The strength of the strongest preference sequence between
+two candidates is denoted as $t^*[A,B]$. If there is no preference
+sequence between candidates A and B, then: $t^*[A,B] = 0$. It can be
+shown that $t^*$ satisfies the transitive property (i.e., if $t^*[X,Y]
+> t^*[Y,X]$ and $t^*[Y,Z] > t^*[Z,Y]$, then $t^*[X,Z] >
+t^*[Z,X]$). Then it is possible to define a global preference function
+between two knights, as follows:\vspace{-.2in}
+
+\begin{equation*}
+T(A,B)=\left\{
+\begin{matrix}+1\ &\ if\ t^*[A,B]>t^*[B,A]\\
+-1\ &\ if\ t^*[A,B]<t^*[B,A]\\
+0\ &\ otherwise
+\end{matrix}
+\right\}
+\end{equation*}
+
+\noindent Given the Grand Maester's approach, there is at least one
+knight $X$ that has better or equal global preference versus all other
+knights $Y$, i.e., $\forall\ Y: T(X,Y) = 1$ or $T(X,Y)=0$. Then knight
+$X$ is the ``global winner'' of all the tournaments and becomes the
+Lord Commander of the Kingsguard.  In order to generate the global
+ranking, the approach of the Grand Maester is to compute the strength
+of the strongest preference sequence for every pair of knights and
+rank the knights by finding first the Lord Commander, then removing
+him from the list, finding the next winner, etc.\\
+
+\begin{enumerate}[label=\Alph*.]
+\item The Grand Maester argues that he has an
+efficient algorithm for computing the reliability of the strongest
+preference sequences for every pair of knights. What do you believe is
+this efficient algorithm? In this process, describe the underlying
+data structure needed to compute these values. What is the running
+time of the efficient solution?\\
+
+\item Assume that there are 5 knights that
+participated in the tournaments: Barristan Selmy, Sandor Clegane,
+Loras Tyrell, Brienne of Tarth and Jamie Lannister. There were 45
+different tournaments that took place:\\
+\end{enumerate}
+
+\noindent In 8 tournaments the ranking was:\\ Jamie Lannister > Brienne of Tarth
+> Sandor Clegane > Loras Tyrell > Barristan Selmy\\
+
+\noindent In 5 tournaments the ranking was:\\ Loras Tyrell > Barristan Selmy >
+Jamie Lannister > Brienne of Tarth > Sandor Clegane\\
+
+\noindent In 7 tournaments the ranking was:\\ Sandor Clegane > Barristan Selmy >
+Brienne of Tarth > Jamie Lannister > Loras Tyrell\\
+
+\noindent In 2 tournaments the ranking was:\\ Barristan Selmy > Jamie Lannister >
+Loras Tyrell > Sandor Clegane > Brienne of Tarth\\
+
+\noindent In 8 tournaments the ranking was:\\ Brienne of Tarth > Jamie Lannister >
+Loras Tyrell > Sandor Clegane > Barristan Selmy\\
+
+\noindent In 5 tournaments the ranking was:\\ Loras Tyrell > Sandor Clegane >
+Brienne of Tarth > Barristan Selmy > Jamie Lannister\\
+
+\noindent In 7 tournaments the ranking was:\\ Barristan Selmy > Loras Tyrell >
+Brienne of Tarth > Jamie Lannister > Sandor Clegane\\
+
+\noindent In 3 tournaments the ranking was:\\ Barristan Selmy > Loras Tyrell >
+Jamie Lannister > Brienne of Tarth > Sandor Clegane\\
+
+\noindent i) Compute all the preference values. Does an undisputed winner
+arise in this case and why yes or no?\\
+
+\noindent ii) Compute the strengths of the strongest preference
+sequences for all pairs of knights with the efficient algorithm of the
+Grand Maester.\\
+
+\noindent iii) Provide the final ranking according to the strengths of
+the strongest preference sequences.\\
+
+
+\end{document}
+
