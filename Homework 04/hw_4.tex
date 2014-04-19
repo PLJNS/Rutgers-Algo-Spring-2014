@@ -76,6 +76,25 @@ algorithm to find the tour in linear time, i.e., in at most $O(|V| +
 streets.
 \end{enumerate}
 
+\noindent{Show that the problem has a solution if and only if
+there are no dead ends and no $n$-way junctions in New Town, where $n$
+is odd, i.e., each intersection in the town has an even degree.}
+
+Since each intersection has an even degree, there is definitely a solution as this is an Euler Tour. Dead ends are also odd junctions, as $n = 1$. Start with any vertex, or town, and repeatedly go to a street that doesn't separate the entire graph. Once we find a street that separates the graph, we are done. Until then we add the street, then remove it (so we don't visit it again) and repeat. If we end up separating the graph by going to a wrong street, we will not be able to visit that section of New Town.
+
+
+\noindent{If such tour exists, please describe an efficient
+algorithm to find the tour in linear time, i.e., in at most $O(|V| +
+|E|)$ time, where $V$ is the set of junctions and $E$ is the set of
+streets.}
+
+We can do the algorithm stated previously:
+
+\noindent{Start with any vertex, or town, and repeatedly go to a street that doesn't separate the entire graph. Once we find a street that separates the graph, we are done. Until then we add the street, then remove it (so we don't visit it again) and repeat. If we end up separating the graph by going to a wrong street, we will not be able to visit that section of New Town.}
+
+This is $O(|V| + |E|)$ time, as we at most visit every single street once and every single town once. Everything that separates the graph is saved for the end. So, we go down a street and lower our $|E|$ by one, and then go to another $|V|$. We repeat going down the $|E|-i$ streets, and the $|V|-i$ junctions until none remain. As we only take one street or junction each time, the running time is $O(|V| + |E|)$.
+
+
 \subsection*{Problem 2: [25 points]} In a chemistry class, the
 professor asks you to synthesize products using existing
 chemicals. For instance, 2 parts of chemical A produces 1 part of
