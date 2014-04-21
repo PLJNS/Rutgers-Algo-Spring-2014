@@ -266,6 +266,29 @@ calculations? Provide an efficient algorithm that can detect if such
 an impossible sequence of chemical reactions seems feasible given the
 $n \times n$ production ratio matrix. Argue about the running time of
 your algorithm.}
+
+In the graph representation found above, this would be very easy to
+detect. Every edge between two chemicals has a fractional value, and
+every duo of chemicals has a conversion to and fro. The only way
+to get a value greater than one from a conversion is if the conversion
+to another chemical summed with the conversion back from that chemical
+is greater than one. For instance, if to convert from chemical $A$ to
+chemical $B$, 3 parts $A$ were required for 5 parts $B$, giving that
+edge a value of $0.6$. Then, if the matrix also had 2 parts $B$
+being required to make $1$ part $A$, resulting in a value on the edge
+of $0.5$. Because $0.5 + 0.6 > 1$, the chart and graph contain
+values which violate fundamental laws of nature.
+
+The algorithm I'd use to compute this value would begin on chemical 
+node $A$ and store the fractional value of the ratio needed to convert
+it into every subsequent chemical $B$, $C$, ... When on the opposite
+chemical, add to this value the cost of converting back to $A$ from 
+$B$, $C$, ... If this value is greater than $1$, then the matrix is
+flawed in some way. If not, then the matrix contains no errors \emph{of
+this kind}, but may contain others. 
+
+$$O(2n) = O(n)$$
+
 \end{enumerate}
 
 \subsection*{Problem 3: [25 points]} Consider a courier company with
