@@ -153,6 +153,12 @@ to take this time into account.\\
 \noindent Give an algorithm as efficient as possible to solve this
 problem, argue its running time, and prove its correctness.\\
 
+The first step that we need to do is change all the times to be on the edges. We can do this by going through every vertex (location) and add an hour to the times. This will adjust the times for when the packages are ready to be shipped. This is the costliest part, and we just need to go through $O(|V| + |E|)$, so the entire graph at least once. Go through every vertex to get the times and add an hour, and then go through every edge assigning them when needed. Next, we want to find the shortest path (meaning earliest times) at the given towns. We can do this by computing an all pairs shortest path algorithm.
+
+We will go through each vertex, giving it a weight of 0. Then we will compare it to every edge going through that vertex. We will update our shortest paths between the  vertices with the following rule: $\text{dist}(i,j,k) = \text{min}(\text{dist}(i,k,k-1)+\text{dist})k,j,k-1),\text{dist}(i,j,k-1))$. $k$ is our initial node, and we go through them all. $i$ is our intermediate node and we go through all. $j$ is our final node and we go through them all. The total running time of this is $O(V^3)$ (It's Floyd-Warshall, we don't know how sparse or dense the graph is ).
+
+The total running time is $O(|V|^3 + |V| + |E|)$ which simplifies to $O(|V|^3)$.
+
 \subsection*{Problem 4: [35 points]} The clash of kings has come to an end in
 the land of Westeros and the winds of winter have passed... The Grand
 Maester has proposed a series of jousting tournaments to celebrate the
