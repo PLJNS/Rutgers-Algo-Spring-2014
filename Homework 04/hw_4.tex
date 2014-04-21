@@ -52,7 +52,7 @@
 
 \begin{document}
 
-\subsection*{Problem 1: [25 points]} After the departure of Storm
+\subsection*{Problem 1} After the departure of Storm
 Sandy, the small town of New Town suffered an electricity power
 shortage. After this experience, the local electricity agent decided
 to create plans to better handle future events. The idea is to send
@@ -66,33 +66,24 @@ tour that visits each street only once and then goes back to the
 starting point.\\
 
 \begin{enumerate}[label=\Alph*.]
-\item  Show that the problem has a solution if and only if
-there are no dead ends and no $n$-way junctions in New Town, where $n$
-is odd, i.e., each intersection in the town has an even degree.
-
-\item  If such tour exists, please describe an efficient
-algorithm to find the tour in linear time, i.e., in at most $O(|V| +
-|E|)$ time, where $V$ is the set of junctions and $E$ is the set of
-streets.
-\end{enumerate}
-
-\noindent{Show that the problem has a solution if and only if
+\item  \textbf{Show that the problem has a solution if and only if
 there are no dead ends and no $n$-way junctions in New Town, where $n$
 is odd, i.e., each intersection in the town has an even degree.}
 
 Since each intersection has an even degree, there is definitely a solution as this is an Euler Tour. Dead ends are also odd junctions, as $n = 1$. Start with any vertex, or town, and repeatedly go to a street that doesn't separate the entire graph. Once we find a street that separates the graph, we are done. Until then we add the street, then remove it (so we don't visit it again) and repeat. If we end up separating the graph by going to a wrong street, we will not be able to visit that section of New Town.
 
-
-\noindent{If such tour exists, please describe an efficient
+\item  \textbf{If such tour exists, please describe an efficient
 algorithm to find the tour in linear time, i.e., in at most $O(|V| +
 |E|)$ time, where $V$ is the set of junctions and $E$ is the set of
 streets.}
 
 We can do the algorithm stated previously:
 
-\noindent{Start with any vertex, or town, and repeatedly go to a street that doesn't separate the entire graph. Once we find a street that separates the graph, we are done. Until then we add the street, then remove it (so we don't visit it again) and repeat. If we end up separating the graph by going to a wrong street, we will not be able to visit that section of New Town.}
+Start with any vertex, or town, and repeatedly go to a street that doesn't separate the entire graph. Once we find a street that separates the graph, we are done. Until then we add the street, then remove it (so we don't visit it again) and repeat. If we end up separating the graph by going to a wrong street, we will not be able to visit that section of New Town.
 
 This is $O(|V| + |E|)$ time, as we at most visit every single street once and every single town once. Everything that separates the graph is saved for the end. So, we go down a street and lower our $|E|$ by one, and then go to another $|V|$. We repeat going down the $|E|-i$ streets, and the $|V|-i$ junctions until none remain. As we only take one street or junction each time, the running time is $O(|V| + |E|)$.
+
+\end{enumerate}
 
 
 \subsection*{Problem 2: [25 points]} In a chemistry class, the
@@ -115,16 +106,16 @@ $j$ and then back to chemical $i$ should result in a smaller quantity
 of chemical $i$ relatively to the original one.\\
 
 \begin{enumerate}[label=\Alph*.]
-\item  The Chemistry professor asks from you the
+\item  \textbf{The Chemistry professor asks from you the
 following. Given the $n \times n$ matrix, find the best sequence of
 chemical reactions to produce the most of chemical $D$ given an
 available quantity of chemical $A$. As mentioned before there are $n$
 different chemicals you can use and the matrix specifies the
 production ratios of all corresponding reactions. Provide an algorithm
 for finding the best sequence. Argue about the running time of your
-algorithm.
+algorithm.}
 
-\item  One of the teams found out that using chemical
+\item  \textbf{One of the teams found out that using chemical
 $i_1$ to produce chemical $i_2$, then chemical $i_3$, \dots, then
 chemical $i_k$ and back to $i_1$ results in a bigger quantity of
 chemical $i_1$ than the original one, i.e., $R_{i_1,i_2} \cdot
@@ -133,7 +124,7 @@ in the ratio matrix or the students did something wrong in their
 calculations? Provide an efficient algorithm that can detect if such
 an impossible sequence of chemical reactions seems feasible given the
 $n \times n$ production ratio matrix. Argue about the running time of
-your algorithm.
+your algorithm.}
 \end{enumerate}
 
 \subsection*{Problem 3: [25 points]} Consider a courier company with
@@ -150,8 +141,8 @@ possible. Note that in every intermediate transfer station, it takes
 about an hour for a package to move from a truck to another. You need
 to take this time into account.\\
 
-\noindent Give an algorithm as efficient as possible to solve this
-problem, argue its running time, and prove its correctness.\\
+\noindent \textbf{Give an algorithm as efficient as possible to solve this
+problem, argue its running time, and prove its correctness.}\\
 
 The first step that we need to do is change all the times to be on the edges. We can do this by going through every vertex (location) and add an hour to the times. This will adjust the times for when the packages are ready to be shipped. This is the costliest part, and we just need to go through $O(|V| + |E|)$, so the entire graph at least once. Go through every vertex to get the times and add an hour, and then go through every edge assigning them when needed. Next, we want to find the shortest path (meaning earliest times) at the given towns. We can do this by computing an all pairs shortest path algorithm.
 
@@ -270,7 +261,6 @@ time of the efficient solution?\\
 participated in the tournaments: Barristan Selmy, Sandor Clegane,
 Loras Tyrell, Brienne of Tarth and Jamie Lannister. There were 45
 different tournaments that took place:\\
-\end{enumerate}
 
 \noindent In 8 tournaments the ranking was:\\ Jamie Lannister > Brienne of Tarth
 > Sandor Clegane > Loras Tyrell > Barristan Selmy\\
@@ -296,16 +286,18 @@ Brienne of Tarth > Jamie Lannister > Sandor Clegane\\
 \noindent In 3 tournaments the ranking was:\\ Barristan Selmy > Loras Tyrell >
 Jamie Lannister > Brienne of Tarth > Sandor Clegane\\
 
-\noindent i) Compute all the preference values. Does an undisputed winner
+\begin{enumerate}
+\item Compute all the preference values. Does an undisputed winner
 arise in this case and why yes or no?\\
 
-\noindent ii) Compute the strengths of the strongest preference
+\item  Compute the strengths of the strongest preference
 sequences for all pairs of knights with the efficient algorithm of the
 Grand Maester.\\
 
-\noindent iii) Provide the final ranking according to the strengths of
+\item  Provide the final ranking according to the strengths of
 the strongest preference sequences.\\
-
+\end{enumerate}
+\end{enumerate}
 
 \end{document}
 
