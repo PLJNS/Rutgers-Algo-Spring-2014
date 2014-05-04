@@ -1,0 +1,252 @@
+\documentclass[11pt]{article}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb, graphics, setspace}
+\usepackage[noline,noend,ruled,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{graphics}
+\usepackage{multirow}
+\usepackage{verbatim}
+\usepackage[T1]{fontenc}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{url}
+\usepackage[noline,noend,ruled,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\title{Assignment 5 \\ Minimum Spanning Trees, NP-Complete Problems, and Approximation Algorithms}
+
+\author{Paul Jones and Matthew Klein \\
+		Professor Kostas Bekris\\
+		Design and Analysis of Computer Algorithms (01.198.344)}
+
+\date{\today}
+
+\usepackage{setspace}
+\singlespacing
+ \usepackage{url} 
+\usepackage[letterpaper]{geometry}
+\geometry{top=1in, bottom=1in, left=.5in, right=.5in}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Paul Jones and Matthew Klein \\ Professor Kostas Bekris}
+\chead{}
+\rhead{Design and Analysis of Computer Algorithms \\ Rutgers University}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+\begin{document}
+
+\maketitle
+\clearpage
+
+\subsection*{Problem 1} You are a programmer in an
+electronic commerce company, where you are asked to design a new
+recommendation system. The idea is to divide all users into $k$ groups
+based on their purchase history. After the grouping, your system can
+provide recommendations to users based on the purchases of other users
+in the same group.\\
+
+\noindent To perform the grouping, we define a function $s(u_i, u_j)$
+to reflect the similarity of two users $u_i$ and $u_j$. The similarity
+function is defined as: \vspace{-0.05in}
+
+$$
+s(u_i, u_j) = \begin{cases}
+  \parbox{2in}{1 + the number of common purchases $u_i$ and $u_j$ have made} & 
+  (i \neq j) \\
+    \\
+  0 & (i = j)
+\end{cases}
+$$
+
+\noindent To optimize the grouping, we need to minimize the similarity
+of the most similar pair of users that have been assigned to different
+groups.\\
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item \textbf{Provide an efficient algorithm that groups all users
+into $k$ groups and satisfies the optimality requirement mentioned
+above (i.e., minimizes the similarity of users in different groups).}
+
+\item \textbf{What data structures do you assume for the
+implementation of your algorithm?  What is the running time of your
+approach given the data structures you employ?}
+
+\item \textbf{Prove the correctness of your algorithm.}
+\end{enumerate}
+
+\subsection*{Problem 2 (20 points):} In wireless sensor networks, it
+is an important task to periodically collect data from an area of
+interest for time-sensitive applications. The sensed data must be
+gathered and transmitted from the sensors to a base station through
+the most efficient way in terms of energy and speed.\\
+
+\noindent The sensor nodes are deployed randomly in the target
+field. Then, the network establishment begins with the formation of
+communication links between the sensor nodes. Consider that $E(a,b)$
+is the energy needed to send message from node $a$ to node $b$, which
+typically depends on the distance between the two nodes.\\
+
+\noindent An idea in the sensor network literature is to use a minimum
+spanning tree (MST) as the underlying communication structure in order
+to shorten the total transmission distance, while guaranteeing that
+there is a way for a message to reach every node in the network. This
+means that we need to construct a MST of the nodes in the network.\\
+
+\noindent It is possible, however, that a node in the resulting MST
+will be connected with a lot of neighboring nodes, e.g., consider the
+case the MST looks like a star-like structure where a central node is
+connected to all other nodes. Such nodes with many edges may need to
+fuse more data collected from its neighbors than other nodes and to
+consume more energy.  This may cause nodes with a lot of neighbors to
+die earlier because they exhaust their energy.  In order to avoid this
+situation, we limit the number of connections for each node to be at
+most $d$ in the communication tree, for a given positive integer
+$d$.\\
+
+\begin{enumerate}[label=\textbf{\Alph*.}]
+\item \textbf{For $d = 2$, describe an algorithm for finding such
+a communication tree and show that this problem is NP-complete
+problem.  (Hint: consider the relation with finding a RUDRATA-PATH on
+a graph.)}
+
+\item \textbf{Describe a polynomial time algorithm (in detail)
+that solves this problem, if you have an algorithm that solves TSP in
+a polynomial time. }
+\end{enumerate}
+
+\subsection*{Problem 3 (30 points):} Lord Tywin Lannister is
+organizing the feast for the upcoming wedding of his grandson, King
+Tommen Baratheon, with Lady Margaery Tyrell. The Queen of Thornes,
+Olenna Redwyne, and grandmother of Margaery, has purchased two
+exquisite tables from Bravos for the event for the guests to sit and
+attend the feast. These tables are big enough to accommodate all $n$
+guests but she bought two of them because it is better if some of the
+guests are separated. Weddings can lead to quite unfortunate events in
+the land of Westeros...\\
+
+\noindent In particular, the list of $n$ attendees includes members of
+the Tyrell family of Highgarden, members of the Martell family of
+Dorne as well as members of the Lannister family of Casterly
+Rock. Unfortunately, not all attendees have good relationships one
+with another. For instance, Oberyn Martell accuses Gregor Clegane from
+the Lannisters for the death of his sister and her children. So, it
+would not be wise to allow both Oberyn and Gregor to sit on the same
+table, if possible.\\
+
+\noindent Lord Tywin and the Queen of Thornes have drafted a list of
+all $m$ pairs of attendees who do not have good relationships and
+should better be placed on different tables. Their objective is to
+find an assignment of attendees to the two tables such that the total
+number of conflicts between any two guests from different tables is
+maximized.\\
+
+\noindent Based on the above description:
+
+\begin{enumerate}
+\item \textbf{Formulate the problem that Lord Tywin and the Queen of Thornes
+  are facing as a graph problem and define the cost function clearly.}
+\item \textbf{Propose a local search algorithm that is a 2-approximation
+  polynomial time solution. Show that the algorithm provides a
+  2-approximation solution.}
+\item \textbf{Propose a greedy algorithm that is a  2-approximation
+  polynomial time solution. Show that the algorithm provides a
+  2-approximation solution.}
+\item \textbf{Propose a randomized algorithm that is a 2-approximation
+  polynomial time solution. Show that the algorithm provides a
+  2-approximation solution.}
+\end{enumerate}
+
+\noindent [Note: Though the problem is similar to the problem 4 in
+  homework 3, the assignment here does not require that there is no
+  conflict between guests placed on the same table. You may have a
+  situation where it is impossible to assign the guests so that no
+  conflict arises on a table. For instance, both Oberyn Martell and
+  Willas Tyrell hate Gregor Clegane, but they are also not very fond
+  of one another... Instead, you are required to find an assignment
+  that maximizes the number of conflicts between guests sitting in
+  different tables.]\\
+
+\subsection*{Problem 4 (40 points):} Daenerys Targaryen is moving
+her army of elite warriors, the Unsullied, in the land of Essos trying
+to liberate as many cities as possible from the slave-owners that rule
+them. The major cities of Essos, such as Yunkai, Meereen and Astapor,
+are trying to coordinate their defenses.\\
+
+\noindent The strategy suggested by Daenerys' advisor Ser Barristan
+Selmy is to try to isolate the major cities one from another so that
+they cannot communicate and coordinate against Daenerys. Ser Jorah
+Mormont generated for this purpose a map of Essos that provides the
+road network connecting the biggest $n$ cities on the continent.\\
+
+\noindent Daenerys agreed with Ser Barristan Selmy and decided to
+place teams of 100 Unsullied along different road segments so that it
+would not be possible for a messenger from one of the major cities to
+reach another through the road network without being detected
+and... facing the consequences...  Daenerys is worried, however, of
+spending too many of her Unsullied for this purpose and reducing her
+main military force. So, she wants to identify the minimum number of
+road segments that her forces will have to guard so as to achieve this
+objective.\\
+
+\noindent Without knowing how the road network with the $n$ cities and
+the roads connecting them looks like:
+
+\begin{itemize}
+\item[a.] \textbf{Provide a polynomial time algorithm that solves Daenerys'
+  problem exactly, when the objective is to separate only Yunkai and
+  Astapor.}
+
+\item[b.] \textbf{Provide a solution that achieves an approximation ratio of
+  at most 2 when Daenerys wants to separate all three of Yunkai,
+  Meereen and Astapor.}
+  
+\item[c.] \textbf{Propose a local search approach for the general case where
+  Daenerys wants to make sure that at least $m$ cities remain isolated
+  one from another.}
+
+\item[d.] \textbf{The cities of Essos are working on a counter-strategy after
+  they heard the news regarding Daenerys' strategy from spies.} \\
+
+ \noindent They want to place soldiers along the minimum set of roads
+ that need to be protected so that all the cities can still
+ communicate one with another. When a soldier detects the 100
+ Unsullied along a road segment, they will send a large enough force
+ to take them out. To be able to monitor a road, it is necessary to
+ place a soldier along every mile of the corresponding road. The
+ cities need to minimize the number of soldiers used for this purpose
+ so that they are sufficiently defended in case Daenerys attacks them
+ directly. Consequently, the cost of protecting a longer road is
+ directly related to its length [Hint: Thus, the cost of selecting a
+   road segment to monitor is a metric function and satisfies the
+   triangular inequality.].\\
+
+ \noindent Assume that the road network between the $n$ cities of
+ Essos is a complete graph. Consider the problem of identifying the
+ minimum set of roads that need to be monitored so that at least the
+ $m$ major cities will remain connected given the above strategy.
+ Provide a polynomial time approximation algorithm for this problem
+ that has an approximation ratio of 2.
+
+\end{itemize}
+
+
+\end{document}
