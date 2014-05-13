@@ -1,0 +1,3 @@
+#!/bin/sh 
+
+pandoc -o Study-Guide.pdf Study-Guide.md --template=template.tex --toc && open -a Preview Study-Guide.pdf
